@@ -17,6 +17,7 @@ public class TestContactList {
 
 	public static void main(String[] args) {
 		// Object userInput from class Scanner
+		//hi
 		Scanner userInput;
 		userInput = new Scanner(System.in);
 		// Object person1 from class Person
