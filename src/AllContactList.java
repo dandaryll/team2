@@ -20,6 +20,13 @@ public class AllContactList {
 	private ArrayList<Person> allPersonArray = new ArrayList<Person>();
 	private int numOfEntry = 0; // initialize private variable for method read; Purpose: person counter 
 	
+	/**
+	 * Below is to add class person contents to ArrayList allPersonArray
+	 */
+	public void addContact(Person newPerson) {
+		allPersonArray.add(newPerson);
+		
+	}
 	
 	/**
 	 * This methods reads userInput.
@@ -45,7 +52,12 @@ public class AllContactList {
 	 * By: MM
 	 */
 	public void printToConsole() {
-		
+		int index = 0;
+		while (allPersonArray.size() > index) {
+			System.out.println(allPersonArray.get(index));
+			index++;
+
+		}
 	}
 	
 	/**
@@ -75,15 +87,5 @@ public class AllContactList {
 	}
 }
 /* ---OUTPUT---
-First name: Dan
-Last name: Alvarez
-House: 134 Washington St.
-City: Santa Clara
-State: CA
-Zip: 95050
-E-mail: dandaryll88@gmail.com
-Phone: 408-728-8905
-Notes: none
 
-Reached the end of main(), Program ran successfully.
 */

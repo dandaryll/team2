@@ -12,6 +12,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+;
+
 public class Person {
 	private String firstName    = "";
 	private String lastName     = "";
@@ -24,20 +26,71 @@ public class Person {
 	private String notes        = "";
 	private Scanner userInput   = new Scanner (System.in);
 	
+	private AllContactList allContactsFeature = new AllContactList();
+	
 	/**
-	 * Sets the value for firstname to "newFirstname".
-	 * By: DA
+	 * Read userInput
+	 * By: 
 	 */
-	public void setFirstname(String newFirstname) {
+	public boolean readPerson() {
+		// Setters
+		System.out.print("First name: ");
+		String newFirstname = userInput.nextLine();
+		setFirstname(newFirstname);
+		System.out.print("Last name: ");
+		String newLastname = userInput.nextLine();
+		if (newLastname.equals("")) {
+			return false;
+		}
+		setLastname(newLastname);
+		System.out.print("House: ");
+		String newHouse = userInput.nextLine();
+		setHouse(newHouse);
+		System.out.print("City: ");
+		String newCity = userInput.nextLine();
+		setCity(newCity);
+		System.out.print("State: ");
+		String newState = userInput.nextLine();
+		setState(newState);
+		System.out.print("Zip: ");
+		String newZip = userInput.nextLine();
+		setZip(newZip);
+		System.out.print("E-mail: ");
+		String newEmail = userInput.nextLine();
+		setEmail(newEmail);
+		System.out.print("Phone: ");
+		String newPhone = userInput.nextLine();
+		setPhone(newPhone);
+		System.out.print("Notes: ");
+		String newNotes = userInput.nextLine();
+		setNotes(newNotes);
+		System.out.println();
+		return true;
 		
 	}
 	
 	/**
-	 * Sets the value for lastname to "newLastname".
+	 * Sets the value for firstName to "newFirstname".
 	 * By: DA
 	 */
-	public void setLastname(String newLastname) {
-		
+	public boolean setFirstname(String newFirstname) {
+		if (lastName.equalsIgnoreCase("")) {
+			return false;
+		}
+		firstName = newFirstname;
+		return true;
+	}
+	
+	/**
+	 * Sets the value for lastName to "newLastname".
+	 * By: DA
+	 */
+	public boolean setLastname(String newLastname) {
+		if (newLastname.equalsIgnoreCase("")) {
+			return false;
+		}
+		lastName = newLastname;
+		return true;
 	}
 	
 	/**
@@ -45,6 +98,7 @@ public class Person {
 	 * By: DA
 	 */
 	public void setHouse(String newHouse) {
+		house = newHouse;
 
 	}
 
@@ -53,6 +107,7 @@ public class Person {
 	 * By: DA
 	 */
 	public void setCity(String newCity) { // newCity is a parameter
+		city = newCity;
 		
 	}
 
@@ -61,6 +116,7 @@ public class Person {
 	 * By: DA
 	 */
 	public void setState(String newState) { // newState is a parameter
+		state = newState;
 		
 	}
 
@@ -69,7 +125,7 @@ public class Person {
 	 * By: DA
 	 */
 	public void setZip(String newZip) { // newZip is a parameter
-		
+		zip = newZip;
 	}
 	
 	/**
@@ -77,7 +133,7 @@ public class Person {
 	 * By: DA
 	 */
 	public void setEmail(String newEmail) {
-		
+		email = newEmail;
 	}
 	
 	/**
@@ -85,7 +141,23 @@ public class Person {
 	 * By: MM
 	 */
 	public void setPhone(String newPhone) {
-		
+		if (newPhone.length() > 10) {
+			System.out.print("Please enter a 10-digit phone# to continue: ");
+			newPhone = userInput.nextLine();
+			newPhone = newPhone.substring(0, 3) + "-" + newPhone.substring(3, 6) + "-" + newPhone.substring(6, newPhone.length());
+			phone = newPhone;
+			
+		}
+		else if (newPhone.length() == 10) {
+			newPhone = newPhone.substring(0, 3) + "-" + newPhone.substring(3, 6) + "-" + newPhone.substring(6, newPhone.length());
+			phone = newPhone;
+			
+		}
+		else {
+			return;
+			
+		}
+
 	}
 	
 	/**
@@ -93,7 +165,7 @@ public class Person {
 	 * By: MM
 	 */
 	public void setNotes(String newNotes) {
-		
+		notes = newNotes;
 	}
 	
 	/**
@@ -101,7 +173,7 @@ public class Person {
 	 * By: MM
 	 */
 	public String getFirstname() {
-		return "";
+		return firstName;
 	}
 	
 	/**
@@ -109,7 +181,7 @@ public class Person {
 	 * By: MM
 	 */
 	public String getLastname () {
-		return "";
+		return lastName;
 	}
 	
 	
@@ -118,7 +190,7 @@ public class Person {
 	 * By: MM
 	 */
 	public String getHouse () {
-		return "";
+		return house;
 	}
 	
 	/**
@@ -126,7 +198,7 @@ public class Person {
 	 * By: MM
 	 */
 	public String getCity () {
-		return "";
+		return city;
 	}
 	
 	/**
@@ -134,7 +206,7 @@ public class Person {
 	 * By: MM
 	 */
 	public String getState () {
-		return "";
+		return state;
 	}
 	
 	/**
@@ -142,7 +214,7 @@ public class Person {
 	 * By: JT
 	 */
 	public String getZip () {
-		return "";
+		return zip;
 	}
 	
 	/**
@@ -150,7 +222,7 @@ public class Person {
 	 * By: JT
 	 */
 	public String getEmail () {
-		return "";
+		return email;
 	}
 	
 	/**
@@ -158,7 +230,7 @@ public class Person {
 	 * By: JT
 	 */
 	public String getPhone() {
-		return "";
+		return phone;
 	}
 	
 	/**
@@ -166,7 +238,7 @@ public class Person {
 	 * By: JT
 	 */
 	public String getNotes() {
-		return "";
+		return notes;
 	}
 	
 	/**
@@ -190,19 +262,10 @@ public class Person {
 	 * By: JT
 	 */
 	public String toString() {
-		return "";
+		return "Name: " + firstName + " " + lastName + "\n" + "Address: " + house + " " + city + " " +
+			   state + " " + zip + "\n" + "E-mail: " + email + "\n" + "Phone: " + phone + "\n" + "Notes: " + notes + "\n";
 	}
 }
 /* ---OUTPUT---
-First name: Dan
-Last name: Alvarez
-House: 134 Washington St.
-City: Santa Clara
-State: CA
-Zip: 95050
-E-mail: dandaryll88@gmail.com
-Phone: 408-728-8905
-Notes: none
 
-Reached the end of main(), Program ran successfully.
 */
