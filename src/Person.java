@@ -16,7 +16,7 @@ import java.util.List;
 
 public class Person {
 	private String firstName    = "";
-	private String lastName     = "?";
+	private String lastName     = "";
 	private String newLastName  = "";
 	private String house 		= "";
 	private String city  		= "";
