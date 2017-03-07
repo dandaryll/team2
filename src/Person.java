@@ -15,16 +15,16 @@ import java.util.List;
 ;
 
 public class Person {
-	private String firstName    = "";
-	private String lastName     = "";
-	private String newLastName  = "";
-	private String house 		= "";
-	private String city  		= "";
-	private String state 		= "";
-	private String zip   		= "";
-	private String email        = "";
-	private String phone        = "";
-	private String notes        = "";
+	private String firstName    = "?";
+	private String lastName     = "?";
+	private String newLastName  = "?";
+	private String house 		= "?";
+	private String city  		= "?";
+	private String state 		= "?";
+	private String zip   		= "?";
+	private String email        = "?";
+	private String phone        = "?";
+	private String notes        = "?";
 	private Scanner userInput   = new Scanner (System.in);
 	
 	private AllContactList allContactsFeature = new AllContactList();
@@ -35,19 +35,16 @@ public class Person {
 	 */
 	
 	// FIXME: ASK GROUP IF WE CAN SHORTEN METHOD LIMIT OF 30 BY JUST HAVING ONE STREETADDRESS VARIABLE
-	// FIXME: CAN WE ASK LAST NAME FIRST? TEMP. FIX FOR USE CASE 1
+	
 	public boolean readPerson() {
+		System.out.print("First name: ");
+		String newFirstname = userInput.nextLine();
+		setFirstname(newFirstname);
 		System.out.print("Last name: ");
 		newLastName = userInput.nextLine();
 		if (newLastName.equals(""))
 			return false;
 		setnewLastname(newLastName);
-		
-		System.out.print("First name: ");
-		String newFirstname = userInput.nextLine();
-		setFirstname(newFirstname);
-		
-		
 		System.out.print("House: ");
 		String newHouse = userInput.nextLine();
 		setHouse(newHouse);
@@ -78,9 +75,12 @@ public class Person {
 	 * Sets the value for firstName to "newFirstname".
 	 * By: DA
 	 */
-	public void setFirstname(String newFirstname) {
+	public boolean setFirstname(String newFirstname) {
+		if (lastName.equalsIgnoreCase("")) {
+			return false;
+		}
 		firstName = newFirstname;
-		
+		return true;
 	}
 	
 	/**
