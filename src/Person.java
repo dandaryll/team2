@@ -17,6 +17,7 @@ import java.util.List;
 public class Person {
 	private String firstName    = "";
 	private String lastName     = "";
+	private String newLastName  = "";
 	private String house 		= "";
 	private String city  		= "";
 	private String state 		= "";
@@ -32,17 +33,21 @@ public class Person {
 	 * Read userInput
 	 * By: 
 	 */
+	
+	// FIXME: ASK GROUP IF WE CAN SHORTEN METHOD LIMIT OF 30 BY JUST HAVING ONE STREETADDRESS VARIABLE
+	// FIXME: CAN WE ASK LAST NAME FIRST? TEMP. FIX FOR USE CASE 1
 	public boolean readPerson() {
-		// Setters
+		System.out.print("Last name: ");
+		newLastName = userInput.nextLine();
+		if (newLastName.equals(""))
+			return false;
+		setnewLastname(newLastName);
+		
 		System.out.print("First name: ");
 		String newFirstname = userInput.nextLine();
 		setFirstname(newFirstname);
-		System.out.print("Last name: ");
-		String newLastname = userInput.nextLine();
-		if (newLastname.equals("")) {
-			return false;
-		}
-		setLastname(newLastname);
+		
+		
 		System.out.print("House: ");
 		String newHouse = userInput.nextLine();
 		setHouse(newHouse);
@@ -73,23 +78,20 @@ public class Person {
 	 * Sets the value for firstName to "newFirstname".
 	 * By: DA
 	 */
-	public boolean setFirstname(String newFirstname) {
-		if (lastName.equalsIgnoreCase("")) {
-			return false;
-		}
+	public void setFirstname(String newFirstname) {
 		firstName = newFirstname;
-		return true;
+		
 	}
 	
 	/**
-	 * Sets the value for lastName to "newLastname".
+	 * Sets the value for newLastname to "newLastname".
 	 * By: DA
 	 */
-	public boolean setLastname(String newLastname) {
-		if (newLastname.equalsIgnoreCase("")) {
+	public boolean setnewLastname(String newLastName) {
+		if (newLastName.equalsIgnoreCase("")) {
 			return false;
 		}
-		lastName = newLastname;
+		lastName = newLastName;
 		return true;
 	}
 	
@@ -97,8 +99,12 @@ public class Person {
 	 * This method Sets the value for house to "newHouse".
 	 * By: DA
 	 */
-	public void setHouse(String newHouse) {
+	public boolean setHouse(String newHouse) {
+		if (newLastName.equalsIgnoreCase("")) {
+			return false;
+		}
 		house = newHouse;
+		return true;
 
 	}
 
@@ -106,57 +112,76 @@ public class Person {
 	 * Sets the value for city to "newCity".
 	 * By: DA
 	 */
-	public void setCity(String newCity) { // newCity is a parameter
+	public boolean setCity(String newCity) { // newCity is a parameter
+		if (newLastName.equalsIgnoreCase("")) {
+			return false;
+		}
 		city = newCity;
-		
+		return true;
 	}
 
 	/**
 	 * Sets the value for state to "newState".
 	 * By: DA
 	 */
-	public void setState(String newState) { // newState is a parameter
+	public boolean setState(String newState) { // newState is a parameter
+		if (newLastName.equalsIgnoreCase("")) {
+			return false;
+		}
 		state = newState;
-		
+		return true;
 	}
 
 	/**
 	 * Sets the value for zip to "newZip".
 	 * By: DA
 	 */
-	public void setZip(String newZip) { // newZip is a parameter
+	public boolean setZip(String newZip) { // newZip is a parameter
+		if (newLastName.equalsIgnoreCase("")) {
+			return false;
+		}
 		zip = newZip;
+		return true;
 	}
 	
 	/**
 	 * Sets the value for email to "newEmail".
 	 * By: DA
 	 */
-	public void setEmail(String newEmail) {
+	public boolean setEmail(String newEmail) {
+		if (newLastName.equalsIgnoreCase("")) {
+			return false;
+		}
 		email = newEmail;
+		return true;
 	}
 	
 	/**
 	 * Sets the value for phone to "newPhone".
 	 * By: MM
 	 */
-	public void setPhone(String newPhone) {
-		if (newPhone.length() > 10) {
+	public boolean setPhone(String newPhone) {
+		if (newLastName.equalsIgnoreCase("")) {
+			return false;
+		}
+		else if (newPhone.length() > 10) {
 			System.out.print("Please enter a 10-digit phone# to continue: ");
 			newPhone = userInput.nextLine();
 			newPhone = newPhone.substring(0, 3) + "-" + newPhone.substring(3, 6) + "-" + newPhone.substring(6, newPhone.length());
 			phone = newPhone;
+			return true;
 			
 		}
 		else if (newPhone.length() == 10) {
 			newPhone = newPhone.substring(0, 3) + "-" + newPhone.substring(3, 6) + "-" + newPhone.substring(6, newPhone.length());
 			phone = newPhone;
+			return true;
 			
 		}
 		else {
-			return;
-			
+			return false;
 		}
+		
 
 	}
 	
@@ -164,12 +189,16 @@ public class Person {
 	 * Sets the value for notes to "newNotes".
 	 * By: MM
 	 */
-	public void setNotes(String newNotes) {
+	public boolean setNotes(String newNotes) {
+		if (lastName.equalsIgnoreCase("")) {
+			return false;
+		}
 		notes = newNotes;
+		return true;
 	}
 	
 	/**
-	 * Returns the value of firstname.
+	 * Returns the value of firstName.
 	 * By: MM
 	 */
 	public String getFirstname() {
@@ -177,10 +206,10 @@ public class Person {
 	}
 	
 	/**
-	 * Returns the value of lastname.
+	 * Returns the value of newLastname.
 	 * By: MM
 	 */
-	public String getLastname () {
+	public String getnewLastname () {
 		return lastName;
 	}
 	
@@ -245,7 +274,7 @@ public class Person {
 	 * This method sorts the array list last name in alphabetical order.
 	 * By: JT
 	 */
-	public void sortLastName() {
+	public void sortnewLastname() {
 		
 	}
 	
