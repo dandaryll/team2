@@ -15,16 +15,16 @@ import java.util.List;
 ;
 
 public class Person {
-	private String firstName    = "?";
+	private String firstName    = "";
 	private String lastName     = "?";
-	private String newLastName  = "?";
-	private String house 		= "?";
-	private String city  		= "?";
-	private String state 		= "?";
-	private String zip   		= "?";
-	private String email        = "?";
-	private String phone        = "?";
-	private String notes        = "?";
+	private String newLastName  = "";
+	private String house 		= "";
+	private String city  		= "";
+	private String state 		= "";
+	private String zip   		= "";
+	private String email        = "";
+	private String phone        = "";
+	private String notes        = "";
 	private Scanner userInput   = new Scanner (System.in);
 	
 	private AllContactList allContactsFeature = new AllContactList();
@@ -76,7 +76,7 @@ public class Person {
 	 * By: DA
 	 */
 	public boolean setFirstname(String newFirstname) {
-		if (lastName.equalsIgnoreCase("")) {
+		if (newLastName.equalsIgnoreCase("")) {
 			return false;
 		}
 		firstName = newFirstname;
