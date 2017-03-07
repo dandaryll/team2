@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.io.*; // Interface used for saving to disk
 import java.io.Serializable; // Interface used for saving to disk
 import java.util.Arrays;
-import java.util.ArrayList;
+import java.util.ArrayList; // ArrayList class to store info
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
