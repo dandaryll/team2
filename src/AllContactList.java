@@ -7,8 +7,6 @@
  * By: DA
  */
 
-import java.util.Scanner;
-import java.io.*; // Interface used for saving to disk
 import java.io.Serializable; // Interface used for saving to disk
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -18,11 +16,10 @@ import java.util.List;
 
 public class AllContactList {
 	private ArrayList<Person> allPersonArray = new ArrayList<Person>();
-	private int numOfEntry = 0; // initialize private variable for method read; Purpose: person counter 
-	
+	private Person addPerson;
 	
 	/**
-	 * This method reads userInput to assign values to firstName, lastName, house, city, state, zip,
+	 * This method reads userInput and prompts user to assign values to firstName, lastName, house, city, state, zip,
 	 * email, phone and notes.
 	 * 
 	 * By: DA
@@ -74,17 +71,33 @@ public class AllContactList {
 	public void open() {
 		
 	}
+	
+	/**
+	 * This method sorts the array list last name in alphabetical order.
+	 * By: JT
+	 */
+	public void sortLastName() {
+		
+	}
+	
+	/**
+	 * This method sorts the array list first name in alphabetical order.
+	 * By: JT
+	 */
+	public void sortFirstName() {
+
+	}
 }
 /* ---OUTPUT---
-First name: Dan
-Last name: Alvarez
-House: 134 Washington St.
-City: Santa Clara
-State: CA
-Zip: 95050
-E-mail: dandaryll88@gmail.com
-Phone: 408-728-8905
-Notes: none
+First name: 
+Last name: 
+House: 
+City: 
+State: 
+Zip: 
+E-mail: 
+Phone: 
+Notes: 
 
 Reached the end of main(), Program ran successfully.
 */

@@ -3,15 +3,6 @@
  * 
  * By: DA
  */
-import java.util.Scanner;
-import java.io.*; // Interface used for saving to disk
-import java.io.Serializable; // Interface used for saving to disk
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
 public class Person {
 	private String firstName;
 	private String lastName;
@@ -22,7 +13,6 @@ public class Person {
 	private String email;
 	private String phone;
 	private String notes;
-	
 	
 	/**
 	 * Sets the value for firstname to "newFirstname".
@@ -170,22 +160,6 @@ public class Person {
 	}
 	
 	/**
-	 * This method sorts the array list last name in alphabetical order.
-	 * By: JT
-	 */
-	public void sortLastName() {
-		
-	}
-	
-	/**
-	 * This method sorts the array list first name in alphabetical order.
-	 * By: JT
-	 */
-	public void sortFirstName() {
-
-	}
-	
-	/**
 	 * This method returns a toString.
 	 * By: JT
 	 */
@@ -194,15 +168,15 @@ public class Person {
 	}
 }
 /* ---OUTPUT---
-First name: Dan
-Last name: Alvarez
-House: 134 Washington St.
-City: Santa Clara
-State: CA
-Zip: 95050
-E-mail: dandaryll88@gmail.com
-Phone: 408-728-8905
-Notes: none
+First name: 
+Last name: 
+House: 
+City: 
+State: 
+Zip: 
+E-mail: 
+Phone: 
+Notes: 
 
 Reached the end of main(), Program ran successfully.
 */

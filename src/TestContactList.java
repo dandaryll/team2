@@ -4,23 +4,10 @@
  *  
  * By: DA
  */
-import java.util.Scanner;
-import java.io.*; // Interface used for saving to disk
-import java.io.Serializable; // Interface used for saving to disk
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
 public class TestContactList {
 
 	public static void main(String[] args) {
-		//hi nat
 		
-		// Object userInput from class Scanner
-		Scanner userInput;
-		userInput = new Scanner(System.in);
 		// Object person1 from class Person
 		Person person1;
 		person1 = new Person();
@@ -29,37 +16,33 @@ public class TestContactList {
 		addressBook = new AllContactList();
 		
 		addressBook.open();
-
-		// Setters
-		System.out.print("First name: ");
-		String newFirstname = userInput.nextLine();
-		person1.setFirstname(newFirstname);
-		System.out.print("Last name: ");
-		String newLastname = userInput.nextLine();
-		person1.setLastname(newLastname);
-		System.out.print("House: ");
-		String newHouse = userInput.nextLine();
-		person1.setHouse(newHouse);
-		System.out.print("City: ");
-		String newCity = userInput.nextLine();
-		person1.setCity(newCity);
-		System.out.print("State: ");
-		String newState = userInput.nextLine();
-		person1.setState(newState);
-		System.out.print("Zip: ");
-		String newZip = userInput.nextLine();
-		person1.setZip(newZip);
-		System.out.print("E-mail: ");
-		String newEmail = userInput.nextLine();
-		person1.setEmail(newEmail);
-		System.out.print("Phone: ");
-		String newPhone = userInput.nextLine();
-		person1.setPhone(newPhone);
-		System.out.print("Notes: ");
-		String newNotes = userInput.nextLine();
-		person1.setNotes(newNotes);
-
-		// Getters
+		addressBook.read();
+		System.out.println(addressBook.toString());
+		addressBook.printToConsole();
+		addressBook.searchLastName();
+		addressBook.save();
+		
+		//Setters
+		System.out.println("First name: ");
+		person1.setFirstname("");
+		System.out.println("Last name: ");
+		person1.setLastname("");
+		System.out.println("House: ");
+		person1.setHouse("134 Washington St.");
+		System.out.println("City: ");
+		person1.setCity("Santa Clara");
+		System.out.println("State: ");
+		person1.setState("CA");
+		System.out.println("Zip: ");
+		person1.setZip("95050");
+		System.out.println("E-mail: ");
+		person1.setEmail("");
+		System.out.println("Phone: ");
+		person1.setPhone("4087288905");
+		System.out.println("Notes: ");
+		person1.setNotes("none");
+		
+	    // Getters
 		System.out.println(person1.getFirstname());
 		System.out.println(person1.getLastname());
 		System.out.println(person1.getHouse());
@@ -73,31 +56,23 @@ public class TestContactList {
 		// toString to print a class Person object
 		System.out.println(person1.toString());
 
-		person1.sortFirstName();
-		person1.sortLastName();
-
-		addressBook.read();
-		System.out.println(addressBook.toString());
-		addressBook.printToConsole();
-		addressBook.searchLastName();
-		addressBook.save();
-
-		userInput.close();
+		addressBook.sortFirstName();
+		addressBook.sortLastName();
 		
 		System.out.println("Reached the end of main(), Program ran successfully.");
 
 	}
 }
 /* ---OUTPUT---
-First name: Dan
-Last name: Alvarez
-House: 134 Washington St.
-City: Santa Clara
-State: CA
-Zip: 95050
-E-mail: dandaryll88@gmail.com
-Phone: 408-728-8905
-Notes: none
+First name: 
+Last name: 
+House: 
+City: 
+State: 
+Zip: 
+E-mail: 
+Phone: 
+Notes: 
 
 Reached the end of main(), Program ran successfully.
 */
