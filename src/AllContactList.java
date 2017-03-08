@@ -22,7 +22,8 @@ public class AllContactList {
 	
 	
 	/**
-	 * This method reads userInput.
+	 * This method reads userInput to assign values to firstName, lastName, house, city, state, zip,
+	 * email, phone and notes.
 	 * 
 	 * By: DA
 	 */
@@ -62,7 +63,7 @@ public class AllContactList {
 	 * 
 	 * By: JT
 	 */
-	public void saveOnExit() {
+	public void save() {
 
 	}
 	
@@ -70,7 +71,7 @@ public class AllContactList {
 	 * This method reads the saved file when the program starts
 	 * By: JT
 	 */
-	public void openOnStart() {
+	public void open() {
 		
 	}
 }

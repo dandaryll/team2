@@ -23,8 +23,10 @@ public class TestContactList {
 		Person person1;
 		person1 = new Person();
 		// Object contactsEdit from class AllContactList
-		AllContactList contactsEdit;
-		contactsEdit = new AllContactList();
+		AllContactList addressBook;
+		addressBook = new AllContactList();
+		
+		addressBook.open();
 
 		// Setters
 		System.out.print("First name: ");
@@ -72,11 +74,11 @@ public class TestContactList {
 		person1.sortFirstName();
 		person1.sortLastName();
 
-		contactsEdit.read();
-		System.out.println(contactsEdit.toString());
-		contactsEdit.printToConsole();
-		contactsEdit.searchLastName();
-		contactsEdit.saveOnExit();
+		addressBook.read();
+		System.out.println(addressBook.toString());
+		addressBook.printToConsole();
+		addressBook.searchLastName();
+		addressBook.save();
 
 		userInput.close();
 		

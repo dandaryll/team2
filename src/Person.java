@@ -22,7 +22,7 @@ public class Person {
 	private String email;
 	private String phone;
 	private String notes;
-	private Scanner userInput   = new Scanner (System.in);
+	
 	
 	/**
 	 * Sets the value for firstname to "newFirstname".
