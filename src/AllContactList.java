@@ -7,13 +7,14 @@
  * By: DA
  */
 
-import java.io.Serializable; // Interface used for saving to disk
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
+import java.util.ArrayList; // Interface for ArrayList
+import java.util.Scanner;
+import java.io.FileInputStream; // Interface used for saving to disk
+import java.io.FileOutputStream; // Interface used for saving to disk
+import java.io.IOException; // Interface used for saving to disk
+import java.io.ObjectInputStream; // Interface used for saving to disk
+import java.io.ObjectOutputStream; // Interface used for saving to disk
+import java.io.Serializable;// Interface used for saving to disk
 public class AllContactList {
 	private ArrayList<Person> allPersonArray = new ArrayList<Person>();
 	private Person addPerson;
