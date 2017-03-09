@@ -4,8 +4,6 @@
  * By: DA
  */
 
-import java.util.ArrayList; // Interface for ArrayList
-import java.util.Scanner;
 import java.io.FileInputStream; // Interface used for saving to disk
 import java.io.FileOutputStream; // Interface used for saving to disk
 import java.io.IOException; // Interface used for saving to disk
