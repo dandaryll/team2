@@ -4,6 +4,16 @@
  *  
  * By: DA
  */
+
+import java.util.ArrayList; // Interface for ArrayList
+import java.util.Scanner;
+import java.io.FileInputStream; // Interface used for saving to disk
+import java.io.FileOutputStream; // Interface used for saving to disk
+import java.io.IOException; // Interface used for saving to disk
+import java.io.ObjectInputStream; // Interface used for saving to disk
+import java.io.ObjectOutputStream; // Interface used for saving to disk
+import java.io.Serializable;// Interface used for saving to disk
+
 public class TestContactList {
 
 	public static void main(String[] args) {
@@ -11,14 +21,17 @@ public class TestContactList {
 		// Object person1 from class Person
 		Person person1;
 		person1 = new Person();
+		person1.read();
+		
 		// Object contactsEdit from class AllContactList
 		AllContactList addressBook;
 		addressBook = new AllContactList();
 		
 		addressBook.open();
-		addressBook.read();
 		System.out.println(addressBook.toString());
 		addressBook.printToConsole();
+		addressBook.sortFirstName();
+		addressBook.sortLastName();
 		addressBook.searchLastName();
 		addressBook.save();
 		
@@ -28,19 +41,19 @@ public class TestContactList {
 		System.out.println("Last name: ");
 		person1.setLastname("");
 		System.out.println("House: ");
-		person1.setHouse("134 Washington St.");
+		person1.setHouse("");
 		System.out.println("City: ");
-		person1.setCity("Santa Clara");
+		person1.setCity("");
 		System.out.println("State: ");
-		person1.setState("CA");
+		person1.setState("");
 		System.out.println("Zip: ");
-		person1.setZip("95050");
+		person1.setZip("");
 		System.out.println("E-mail: ");
 		person1.setEmail("");
 		System.out.println("Phone: ");
-		person1.setPhone("4087288905");
+		person1.setPhone("");
 		System.out.println("Notes: ");
-		person1.setNotes("none");
+		person1.setNotes("");
 		
 	    // Getters
 		System.out.println(person1.getFirstname());
@@ -56,8 +69,7 @@ public class TestContactList {
 		// toString to print a class Person object
 		System.out.println(person1.toString());
 
-		addressBook.sortFirstName();
-		addressBook.sortLastName();
+		
 		
 		System.out.println("Reached the end of main(), Program ran successfully.");
 

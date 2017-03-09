@@ -3,6 +3,16 @@
  * 
  * By: DA
  */
+
+import java.util.ArrayList; // Interface for ArrayList
+import java.util.Scanner;
+import java.io.FileInputStream; // Interface used for saving to disk
+import java.io.FileOutputStream; // Interface used for saving to disk
+import java.io.IOException; // Interface used for saving to disk
+import java.io.ObjectInputStream; // Interface used for saving to disk
+import java.io.ObjectOutputStream; // Interface used for saving to disk
+import java.io.Serializable;// Interface used for saving to disk
+
 public class Person {
 	private String firstName;
 	private String lastName;
@@ -13,6 +23,16 @@ public class Person {
 	private String email;
 	private String phone;
 	private String notes;
+	
+	/**
+	 * This method reads userInput and prompts user to assign values to firstName, lastName, house, city, state, zip,
+	 * email, phone and notes.
+	 * 
+	 * By: DA
+	 */
+	public void read() {
+		
+	}
 	
 	/**
 	 * Sets the value for firstname to "newFirstname".

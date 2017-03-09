@@ -15,19 +15,9 @@ import java.io.IOException; // Interface used for saving to disk
 import java.io.ObjectInputStream; // Interface used for saving to disk
 import java.io.ObjectOutputStream; // Interface used for saving to disk
 import java.io.Serializable;// Interface used for saving to disk
+
 public class AllContactList {
 	private ArrayList<Person> allPersonArray = new ArrayList<Person>();
-	private Person addPerson;
-	
-	/**
-	 * This method reads userInput and prompts user to assign values to firstName, lastName, house, city, state, zip,
-	 * email, phone and notes.
-	 * 
-	 * By: DA
-	 */
-	public void read() {
-		
-	}
 	
 	/**
 	 * This method defines a toString method. Display all
@@ -74,7 +64,7 @@ public class AllContactList {
 	}
 	
 	/**
-	 * This method sorts the array list last name in alphabetical order.
+	 * This method sorts the array list last name elements in alphabetical order.
 	 * By: JT
 	 */
 	public void sortLastName() {
@@ -82,7 +72,7 @@ public class AllContactList {
 	}
 	
 	/**
-	 * This method sorts the array list first name in alphabetical order.
+	 * This method sorts the array list first name elements in alphabetical order.
 	 * By: JT
 	 */
 	public void sortFirstName() {
