@@ -15,6 +15,9 @@ import java.io.IOException; // Interface used for saving to disk
 import java.io.ObjectInputStream; // Interface used for saving to disk
 import java.io.ObjectOutputStream; // Interface used for saving to disk
 import java.io.Serializable;// Interface used for saving to disk
+import java.util.Comparator;
+import java.util.Collections; // Class for sorting ArrayList
+import java.util.List;
 
 public class AllContactList {
 	private ArrayList<Person> allPersonArray = new ArrayList<Person>();
