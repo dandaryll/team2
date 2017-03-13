@@ -28,32 +28,22 @@ public class TestContactList {
 		addressBook = new AllContactList();
 		
 		addressBook.open();
+		addressBook.sortAllContacts();
 		System.out.println(addressBook.toString());
 		addressBook.printToConsole();
-		addressBook.sortFirstName();
-		addressBook.sortLastName();
 		addressBook.searchLastName();
 		addressBook.save();
 		
 		//Setters
-		System.out.println("First name: ");
-		person1.setFirstname("");
-		System.out.println("Last name: ");
-		person1.setLastname("");
-		System.out.println("House: ");
-		person1.setHouse("");
-		System.out.println("City: ");
-		person1.setCity("");
-		System.out.println("State: ");
-		person1.setState("");
-		System.out.println("Zip: ");
-		person1.setZip("");
-		System.out.println("E-mail: ");
-		person1.setEmail("");
-		System.out.println("Phone: ");
-		person1.setPhone("");
-		System.out.println("Notes: ");
-		person1.setNotes("");
+		person1.setFirstname("Mickey");
+		person1.setLastname("Mouse");
+		person1.setHouse("1313 Disneyland Dr.");
+		person1.setCity("Anaheim");
+		person1.setState("CA");
+		person1.setZip("92803");
+		person1.setEmail("mickey.mouse@disney.com");
+		person1.setPhone("123-456-7890");
+		person1.setNotes("Disneyland mascot");
 		
 	    // Getters
 		System.out.println(person1.getFirstname());
@@ -69,22 +59,10 @@ public class TestContactList {
 		// toString to print a class Person object
 		System.out.println(person1.toString());
 
-		
-		
 		System.out.println("Reached the end of main(), Program ran successfully.");
 
 	}
 }
 /* ---OUTPUT---
-First name: 
-Last name: 
-House: 
-City: 
-State: 
-Zip: 
-E-mail: 
-Phone: 
-Notes: 
-
 Reached the end of main(), Program ran successfully.
 */

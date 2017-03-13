@@ -67,28 +67,10 @@ public class AllContactList {
 	 * This method sorts the array list last name elements in alphabetical order.
 	 * By: JT
 	 */
-	public void sortLastName() {
+	public void sortAllContacts() {
 		
-	}
-	
-	/**
-	 * This method sorts the array list first name elements in alphabetical order.
-	 * By: JT
-	 */
-	public void sortFirstName() {
-
 	}
 }
 /* ---OUTPUT---
-First name: 
-Last name: 
-House: 
-City: 
-State: 
-Zip: 
-E-mail: 
-Phone: 
-Notes: 
-
 Reached the end of main(), Program ran successfully.
 */

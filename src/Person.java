@@ -11,7 +11,7 @@ import java.io.ObjectInputStream; // Interface used for saving to disk
 import java.io.ObjectOutputStream; // Interface used for saving to disk
 import java.io.Serializable;// Interface used for saving to disk
 
-public class Person {
+public class Person implements Comparable<Person> {
 	private String firstName;
 	private String lastName;
 	private String house;
@@ -184,17 +184,15 @@ public class Person {
 	public String toString() {
 		return "";
 	}
+	
+	/**
+	 * This method is used to complete Collections.sort method for alphabetizing lastnames and firstnames.
+	 */
+	@Override
+	public int compareTo(Person otherPerson) {
+		return 0;
+	}
 }
 /* ---OUTPUT---
-First name: 
-Last name: 
-House: 
-City: 
-State: 
-Zip: 
-E-mail: 
-Phone: 
-Notes: 
-
 Reached the end of main(), Program ran successfully.
 */
