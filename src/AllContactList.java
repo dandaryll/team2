@@ -20,7 +20,18 @@ import java.util.Collections; // Class for sorting ArrayList
 import java.util.List;
 
 public class AllContactList {
+	Scanner userInput;
+	Person object1;
 	private ArrayList<Person> allPersonArray = new ArrayList<Person>();
+	
+	/**
+	 * This method adds a person object information to the ArrayList allPersonArray
+	 * By: DA
+	 */
+	public void addContact(Person newPerson) {
+		allPersonArray.add(newPerson);
+		
+	}
 	
 	/**
 	 * This method defines a toString method. Display all
@@ -37,11 +48,15 @@ public class AllContactList {
 	 * By: MM
 	 */
 	public void printToConsole() {
-		
+		int index = 0;
+		while (allPersonArray.size() > index) {
+			System.out.println(allPersonArray.get(index));
+			index++;
+		}
 	}
 	
 	/**
-	 * This method returns and prints the search result according to last name.
+	 * This method prints the search result according to the userInput last name.
 	 * 
 	 * By: MM
 	 */
