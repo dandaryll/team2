@@ -16,7 +16,7 @@ import java.util.Comparator;
 import java.util.Collections;
 import java.util.List;
 
-public class Person implements Comparable<Person> {
+public class Person implements Serializable, Comparable<Person> {
 	private String firstName;
 	private String lastName;
 	private String house;
