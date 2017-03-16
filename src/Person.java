@@ -265,11 +265,18 @@ public class Person implements Serializable, Comparable<Person> {
 		return notes;
 	}
 	
+	/**
+	 * This method returns a toString.
+	 * By: JT
+	 */
 	public String toString() { 
 		return "Name: " + firstName + " " + lastName + "\n" + "Address: " + house + " " + city + ", " +
 			   state + " " + zip + "\n" + "E-mail: " + email + "\n" + "Phone: " + phone + "\n" + "Notes: " + notes + "\n";
 	}
-
+	
+	/**
+	 * This method is used to complete Collections.sort method for alphabetizing lastnames and firstnames.
+	 */
 	@Override
 	public int compareTo(Person otherPerson) {
 		if (this.lastName.equalsIgnoreCase(otherPerson.lastName)) {
