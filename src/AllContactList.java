@@ -65,7 +65,7 @@ public class AllContactList {
 	}
 	
 	/**
-	 * This method saves all entries to the contact list program to disk then exits the program.
+	 * This method saves all entries to the contact list program to disk.
 	 * 
 	 * By: JT
 	 */

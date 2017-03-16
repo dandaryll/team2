@@ -30,6 +30,8 @@ public class Person implements Serializable, Comparable<Person> {
 	
 	/**
 	 * Default constructor to initialize private data members
+	 * 
+	 * By: DA
 	 */
 	public Person() {
 		firstName   = "";
@@ -79,8 +81,7 @@ public class Person implements Serializable, Comparable<Person> {
 	}
 	
 	/**
-	 * This methods reads userInput for house, city, state, and zip. userInput
-	 * for Address class private data member variables
+	 * This methods reads userInput for address section which are the house, city, state, and zip.
 	 */
 	public void readAddress() {
 		Scanner userInput;
@@ -109,7 +110,9 @@ public class Person implements Serializable, Comparable<Person> {
 	}
 
 	/**
-	 * Sets the value for lastname to "newLastname". By: DA
+	 * Sets the value for lastname to "newLastname".
+	 * 
+	 * By: MM
 	 */
 	public boolean setLastname(String newLastname) {
 		if (newLastname.equals("")) {
