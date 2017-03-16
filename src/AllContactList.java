@@ -26,7 +26,7 @@ public class AllContactList {
 	
 	/**
 	 * This method adds a person object information to the ArrayList allPersonArray
-	 * By: DA
+	 * By: JT
 	 */
 	public void addContact(Person newPerson) {
 		allPersonArray.add(newPerson);
@@ -36,7 +36,7 @@ public class AllContactList {
 	/**
 	 * This method defines a toString method. Display all
 	 * 
-	 * By: DA
+	 * By: JT
 	 */
 	public String toString() {
 		return "";
@@ -67,7 +67,7 @@ public class AllContactList {
 	/**
 	 * This method saves all entries to the contact list program to disk.
 	 * 
-	 * By: JT
+	 * By: DA
 	 */
 	public void save() {
 
@@ -75,7 +75,7 @@ public class AllContactList {
 	
 	/**
 	 * This method reads the saved file when the program starts
-	 * By: JT
+	 * By: DA
 	 */
 	public void open() {
 		

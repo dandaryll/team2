@@ -102,7 +102,7 @@ public class Person implements Serializable, Comparable<Person> {
 	}
 	
 	/**
-	 * Sets the value for firstname to "newFirstname". By: DA
+	 * Sets the value for firstname to "newFirstname".By: DA
 	 */
 	public void setFirstname(String newFirstname) {
 		firstName = newFirstname;
