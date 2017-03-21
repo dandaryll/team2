@@ -1,3 +1,4 @@
+
 /**
  * This class represents an object that represents how the contact list is printed as a whole. Also, 
  * one object of this class represents the search feature that find matches based on last name
@@ -24,27 +25,22 @@ public class AllContactList {
 
 	private ArrayList<Person> allPersonArray = new ArrayList<Person>();
 	private Scanner userInput = new Scanner(System.in);
+
 	/**
-	 * This method adds a person object information to the ArrayList allPersonArray
-	 * By: JT
+	 * This method adds a person object information to the ArrayList
+	 * allPersonArray By: JT
 	 */
-	
-	
-	
-	
-	
+
 	public void addContact(Person newPerson) {
 		if (newPerson.getLastname().equals("")) {
 			return;
-		}
-		else {
+		} else {
 			allPersonArray.add(newPerson);
 		}
 	}
 
 	public void addContact() {
 
-		
 		Person newPerson = new Person();
 		System.out.print("First name: ");
 		newPerson.setFirstname(userInput.nextLine());
@@ -64,9 +60,9 @@ public class AllContactList {
 		newPerson.setPhone(userInput.nextLine());
 		System.out.print("Note: ");
 		newPerson.setNotes(userInput.nextLine());
-		allPersonArray.add(newPerson);		
-		}
-		
+		allPersonArray.add(newPerson);
+	}
+
 	/**
 	 * This method defines a toString method. Display all
 	 * 
@@ -75,16 +71,16 @@ public class AllContactList {
 	public String contactList() {
 		String list = Arrays.toString(allPersonArray.toArray()).replace("[", "").replace("]", "");
 		return list;
-		
+
 	}
-	
+
 	/**
-	 * This method returns and prints all entries of the contact list sorted alphabetically.
+	 * This method returns and prints all entries of the contact list sorted
+	 * alphabetically.
 	 * 
 	 * By: JT
 	 */
-	
-	
+
 	public void printToConsole() {
 		int index = 0;
 		while (allPersonArray.size() > index) {
@@ -92,16 +88,33 @@ public class AllContactList {
 			index++;
 		}
 	}
-	
+
 	/**
 	 * This method prints the search result according to the userInput last name.
 	 * 
 	 * By: MM
 	 */
-	public void searchLastName() {
+	public Person searchByLastName () {
 		
+		String givenLastName = userInput.nextLine();
+
+		for (int i = 0; i < allPersonArray.size(); i++) {
+
+			Person foundByLastName = allPersonArray.get(i);
+
+				if (foundByLastName.getLastname().equals(givenLastName)) {
+
+					foundByLastName = allPersonArray.get(i++);
+
+					return foundByLastName ;
+
+				}
+				
+		
+		}
+		return null;
 	}
-	
+
 	/**
 	 * This method saves all entries to the contact list program to disk.
 	 * 
@@ -110,88 +123,50 @@ public class AllContactList {
 	public void save() {
 
 	}
-	
+
 	/**
-	 * This method reads the saved file when the program starts
-	 * By: DA
+	 * This method reads the saved file when the program starts By: DA
 	 */
 	public void open() {
-		
+
 	}
-	
+
 	/**
-	 * This method sorts the array list last name elements in alphabetical order.
-	 * By: JT
+	 * This method sorts the array list last name elements in alphabetical
+	 * order. By: JT
 	 */
 	public void sortAllContacts() {
-		
+
 	}
 }
-/* ---OUTPUT---
-First name: Dan
-Last name: Alvarez
-House: 12345 El Monte Rd.
-City: Los Altos Hills
-State: CA
-Zip: 94022
-E-mail: dan@yahoo.com
-Phone: 408-728-8905
-Notes: none
-
-Name: Dan Alvarez
-Address: 12345 El Monte Rd. Los Altos Hills, CA 94022
-E-mail: dan@yahoo.com
-Phone: 408-728-8905
-Notes: none
-
-First name: Matt
-Last name: Maksim
-House: 12345 El Monte Rd. 
-City: Los Altos Hills
-State: CA
-Zip: 94022
-E-mail: matt@yahoo.com
-Phone: 408-393-2665
-Notes: none
-
-Name: Dan Alvarez
-Address: 12345 El Monte Rd. Los Altos Hills, CA 94022
-E-mail: dan@yahoo.com
-Phone: 408-728-8905
-Notes: none
-
-Name: Matt Maksim
-Address: 12345 El Monte Rd.  Los Altos Hills, CA 94022
-E-mail: matt@yahoo.com
-Phone: 408-393-2665
-Notes: none
-
-First name: Nat
-Last name: Tiyasan
-House: 12345 El Monte Rd.
-City: Los Altos
-State: CA
-Zip: 94022
-E-mail: nat@yahoo.com
-Phone: 408-777-1234
-Notes: none
-
-Name: Dan Alvarez
-Address: 12345 El Monte Rd. Los Altos Hills, CA 94022
-E-mail: dan@yahoo.com
-Phone: 408-728-8905
-Notes: none
-
-Name: Matt Maksim
-Address: 12345 El Monte Rd.  Los Altos Hills, CA 94022
-E-mail: matt@yahoo.com
-Phone: 408-393-2665
-Notes: none
-
-Name: Nat Tiyasan
-Address: 12345 El Monte Rd. Los Altos, CA 94022
-E-mail: nat@yahoo.com
-Phone: 408-777-1234
-Notes: none
-
-*/
+/*
+ * ---OUTPUT--- First name: Dan Last name: Alvarez House: 12345 El Monte Rd.
+ * City: Los Altos Hills State: CA Zip: 94022 E-mail: dan@yahoo.com Phone:
+ * 408-728-8905 Notes: none
+ * 
+ * Name: Dan Alvarez Address: 12345 El Monte Rd. Los Altos Hills, CA 94022
+ * E-mail: dan@yahoo.com Phone: 408-728-8905 Notes: none
+ * 
+ * First name: Matt Last name: Maksim House: 12345 El Monte Rd. City: Los Altos
+ * Hills State: CA Zip: 94022 E-mail: matt@yahoo.com Phone: 408-393-2665 Notes:
+ * none
+ * 
+ * Name: Dan Alvarez Address: 12345 El Monte Rd. Los Altos Hills, CA 94022
+ * E-mail: dan@yahoo.com Phone: 408-728-8905 Notes: none
+ * 
+ * Name: Matt Maksim Address: 12345 El Monte Rd. Los Altos Hills, CA 94022
+ * E-mail: matt@yahoo.com Phone: 408-393-2665 Notes: none
+ * 
+ * First name: Nat Last name: Tiyasan House: 12345 El Monte Rd. City: Los Altos
+ * State: CA Zip: 94022 E-mail: nat@yahoo.com Phone: 408-777-1234 Notes: none
+ * 
+ * Name: Dan Alvarez Address: 12345 El Monte Rd. Los Altos Hills, CA 94022
+ * E-mail: dan@yahoo.com Phone: 408-728-8905 Notes: none
+ * 
+ * Name: Matt Maksim Address: 12345 El Monte Rd. Los Altos Hills, CA 94022
+ * E-mail: matt@yahoo.com Phone: 408-393-2665 Notes: none
+ * 
+ * Name: Nat Tiyasan Address: 12345 El Monte Rd. Los Altos, CA 94022 E-mail:
+ * nat@yahoo.com Phone: 408-777-1234 Notes: none
+ * 
+ */
