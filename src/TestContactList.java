@@ -28,18 +28,19 @@ public class TestContactList {
 		addressBook.addContact();
 		System.out.println('\n'+ addressBook.contactList());
 	}
-}
+	
+
 		
 		
 		
 		
-<<<<<<< HEAD
+
 		// Creates an object of "person1" from class Person
-		Person person1;
-=======
+		//Person person1;
+
 		// Object person1 from class Person
 		/* Person person1;
->>>>>>> branch 'master' of https://github.com/dandaryll/team2.git
+
 		person1 = new Person();
 		person1.read();
 		addressBook.addContact(person1);
@@ -47,14 +48,13 @@ public class TestContactList {
 		addressBook.printToConsole();
 		*/
 		
-<<<<<<< HEAD
+
 		// Creates an object "person2" from class Person
-		Person person2;
-=======
+		//Person person2;
+
 		// Object person1 from class Person
 		
 		/*Person person2;
->>>>>>> branch 'master' of https://github.com/dandaryll/team2.git
 		person2 = new Person();
 		person2.read();
 		addressBook.addContact(person2);
@@ -68,9 +68,8 @@ public class TestContactList {
 		addressBook.addContact(person3);
 		System.out.println();
 		addressBook.printToConsole();
-	}
+	} */
 }
-*/
 		
 		
 /* ---OUTPUT---

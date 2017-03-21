@@ -21,18 +21,13 @@ import java.util.Collections; // Class for sorting ArrayList
 import java.util.List;
 
 public class AllContactList {
-<<<<<<< HEAD
-	private ArrayList<Person> allPersonArray = new ArrayList<Person>();
-=======
->>>>>>> branch 'master' of https://github.com/dandaryll/team2.git
-	
+
 	private ArrayList<Person> allPersonArray = new ArrayList<Person>();
 	private Scanner userInput = new Scanner(System.in);
 	/**
 	 * This method adds a person object information to the ArrayList allPersonArray
 	 * By: JT
 	 */
-<<<<<<< HEAD
 	public void addContact(Person newPerson) {
 		if (newPerson.getLastname().equals("")) {
 			return;
@@ -40,9 +35,10 @@ public class AllContactList {
 		else {
 			allPersonArray.add(newPerson);
 		}
-=======
+	}
+
 	public void addContact() {
->>>>>>> branch 'master' of https://github.com/dandaryll/team2.git
+
 		
 		Person newPerson = new Person();
 		System.out.print("First name: ");
