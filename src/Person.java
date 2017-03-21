@@ -48,8 +48,8 @@ public class Person implements Serializable, Comparable<Person> {
 	}
 	
 	/**
-	 * This method reads userInput and prompts user to assign values to firstName, lastName, house, city, state, zip,
-	 * email, phone and notes.
+	 * This method reads userInput and prompts user to assign values to firstName, lastName,
+	 * email, phone and notes
 	 * 
 	 * By: DA
 	 */
@@ -60,12 +60,13 @@ public class Person implements Serializable, Comparable<Person> {
 		// Setters
 		System.out.print("First name: ");
 		String newFirstname = userInput.nextLine();
-		setFirstname(newFirstname);
 		System.out.print("Last name: ");
 		newLastname = userInput.nextLine();
 		if (newLastname.equals("")) {
+			System.out.println("Contact information not added. Last name required.");
 			return false;
 		}
+		setFirstname(newFirstname);
 		setLastname(newLastname);
 		readAddress();
 		System.out.print("E-mail: ");
@@ -82,6 +83,8 @@ public class Person implements Serializable, Comparable<Person> {
 	
 	/**
 	 * This methods reads userInput for address section which are the house, city, state, and zip.
+	 * 
+	 * By: DA
 	 */
 	public void readAddress() {
 		Scanner userInput;
@@ -102,7 +105,8 @@ public class Person implements Serializable, Comparable<Person> {
 	}
 	
 	/**
-	 * Sets the value for firstname to "newFirstname".By: DA
+	 * Sets the value for firstname to "newFirstname".
+	 * By: DA
 	 */
 	public void setFirstname(String newFirstname) {
 		firstName = newFirstname;
@@ -111,18 +115,15 @@ public class Person implements Serializable, Comparable<Person> {
 
 	/**
 	 * Sets the value for lastname to "newLastname".
-	 * 
 	 * By: MM
 	 */
 	public boolean setLastname(String newLastname) {
 		if (newLastname.equals("")) {
-			System.out.println("Contact not added. Last name required.");
+			System.out.println("Contact information not added. Last name required.");
 			return false;
 		}
-		else {
-			lastName = newLastname;
-			return true;
-		}
+		lastName = newLastname;
+		return true;
 		
 	}
 	
@@ -154,62 +155,47 @@ public class Person implements Serializable, Comparable<Person> {
 
 	/**
 	 * Sets the value for zip to "newZip".
-	 * By: DA
+	 * By: MM
 	 */
 	public void setZip(String newZip) { // newZip is a parameter
 		zip = newZip;
 	}
 
 	/**
-	 * Sets the value for email to "newEmail". By: DA
+	 * Sets the value for email to "newEmail".
+	 * By: MM
 	 */
 	public boolean setEmail(String newEmail) {
-		if (newEmail.contains("@") && newEmail.contains(".")) {
-			email = newEmail;
-			return true;
-		}
-		else {
-			System.out.println("Invalid email!");
-			return false;
-		}
-
+		return true;
 	}
 
 	/**
-	 * Sets the value for phone to "newPhone". By: DA
+	 * Sets the value for phone to "newPhone".
+	 * By: MM
 	 */
 	public void setPhone(String newPhone) {
-		
-		if (newPhone.length() > 10) {
-			
-			newPhone = newPhone.substring(0, 3) + "-" + newPhone.substring(3, 6) + "-" + newPhone.substring(6, newPhone.length());
-			phone = newPhone;
-			
-		}
-		else if (newPhone.length() == 10) {
-			newPhone = newPhone.substring(0, 3) + "-" + newPhone.substring(3, 6) + "-" + newPhone.substring(6, newPhone.length());
-			phone = newPhone;
-			
-		}
 
 	}
 
 	/**
-	 * Sets the value for notes to "newNotes". By: DA
+	 * Sets the value for notes to "newNotes".
+	 * By: MM 
 	 */
 	public void setNotes(String newNotes) {
 		notes = newNotes;
 	}
 
 	/**
-	 * Returns the value of firstname. By: DA
+	 * Returns the value of firstname.
+	 * By: MM
 	 */
 	public String getFirstname() {
 		return firstName;
 	}
 
 	/**
-	 * Returns the value of lastname. By: DA
+	 * Returns the value of lastname.
+	 * By: MM
 	 */
 	public String getLastname() {
 		return lastName;
@@ -217,7 +203,7 @@ public class Person implements Serializable, Comparable<Person> {
 	
 	/**
 	 * Returns the value of house.
-	 * By: DA
+	 * By: MM
 	 */
 	public String getHouse () {
 		return house;
@@ -225,7 +211,7 @@ public class Person implements Serializable, Comparable<Person> {
 	
 	/**
 	 * Returns the value of city.
-	 * By: DA
+	 * By: JT
 	 */
 	public String getCity () {
 		return city;
@@ -233,7 +219,7 @@ public class Person implements Serializable, Comparable<Person> {
 	
 	/**
 	 * Returns the value of state.
-	 * By: DA
+	 * By: JT
 	 */
 	public String getState () {
 		return state;
@@ -241,28 +227,31 @@ public class Person implements Serializable, Comparable<Person> {
 	
 	/**
 	 * Returns the value of zip.
-	 * By: DA
+	 * By: JT
 	 */
 	public String getZip () {
 		return zip;
 	}
 
 	/**
-	 * Returns the value of email. By: DA
+	 * Returns the value of email.
+	 * By: JT
 	 */
 	public String getEmail() {
 		return email;
 	}
 
 	/**
-	 * Returns the value of phone. By: DA
+	 * Returns the value of phone.
+	 * By: JT
 	 */
 	public String getPhone() {
 		return phone;
 	}
 
 	/**
-	 * Returns the value of zip. By: DA
+	 * Returns the value of zip.
+	 * By: JT
 	 */
 	public String getNotes() {
 		return notes;
@@ -274,11 +263,12 @@ public class Person implements Serializable, Comparable<Person> {
 	 */
 	public String toString() { 
 		return "Name: " + firstName + " " + lastName + "\n" + "Address: " + house + " " + city + ", " +
-			   state + " " + zip + "\n" + "E-mail: " + email + "\n" + "Phone: " + phone + "\n" + "Notes: " + notes + "\n";
+			   state + " " + zip + "\n" + "E-mail: " + email + "\n" + "Phone: " + phone + "\n" + "Notes: " + notes;
 	}
 	
 	/**
 	 * This method is used to complete Collections.sort method for alphabetizing lastnames and firstnames.
+	 * By: JT
 	 */
 	@Override
 	public int compareTo(Person otherPerson) {
@@ -287,5 +277,70 @@ public class Person implements Serializable, Comparable<Person> {
 
 }
 /* ---OUTPUT---
-Reached the end of main(), Program ran successfully.
+First name: Dan
+Last name: Alvarez
+House: 12345 El Monte Rd.
+City: Los Altos Hills
+State: CA
+Zip: 94022
+E-mail: dan@yahoo.com
+Phone: 408-728-8905
+Notes: none
+
+Name: Dan Alvarez
+Address: 12345 El Monte Rd. Los Altos Hills, CA 94022
+E-mail: dan@yahoo.com
+Phone: 408-728-8905
+Notes: none
+
+First name: Matt
+Last name: Maksim
+House: 12345 El Monte Rd. 
+City: Los Altos Hills
+State: CA
+Zip: 94022
+E-mail: matt@yahoo.com
+Phone: 408-393-2665
+Notes: none
+
+Name: Dan Alvarez
+Address: 12345 El Monte Rd. Los Altos Hills, CA 94022
+E-mail: dan@yahoo.com
+Phone: 408-728-8905
+Notes: none
+
+Name: Matt Maksim
+Address: 12345 El Monte Rd.  Los Altos Hills, CA 94022
+E-mail: matt@yahoo.com
+Phone: 408-393-2665
+Notes: none
+
+First name: Nat
+Last name: Tiyasan
+House: 12345 El Monte Rd.
+City: Los Altos
+State: CA
+Zip: 94022
+E-mail: nat@yahoo.com
+Phone: 408-777-1234
+Notes: none
+
+Name: Dan Alvarez
+Address: 12345 El Monte Rd. Los Altos Hills, CA 94022
+E-mail: dan@yahoo.com
+Phone: 408-728-8905
+Notes: none
+
+Name: Matt Maksim
+Address: 12345 El Monte Rd.  Los Altos Hills, CA 94022
+E-mail: matt@yahoo.com
+Phone: 408-393-2665
+Notes: none
+
+Name: Nat Tiyasan
+Address: 12345 El Monte Rd. Los Altos, CA 94022
+E-mail: nat@yahoo.com
+Phone: 408-777-1234
+Notes: none
+
 */
