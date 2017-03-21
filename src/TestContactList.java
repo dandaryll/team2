@@ -23,17 +23,38 @@ public class TestContactList {
 		// Creates an object of "addressBook" from class AllContactList
 		AllContactList addressBook;
 		addressBook = new AllContactList();
+		addressBook.addContact();
+		System.out.println('\n'+ addressBook.contactList());
+		addressBook.addContact();
+		System.out.println('\n'+ addressBook.contactList());
+	}
+}
 		
+		
+		
+		
+<<<<<<< HEAD
 		// Creates an object of "person1" from class Person
 		Person person1;
+=======
+		// Object person1 from class Person
+		/* Person person1;
+>>>>>>> branch 'master' of https://github.com/dandaryll/team2.git
 		person1 = new Person();
 		person1.read();
 		addressBook.addContact(person1);
 		System.out.println();
 		addressBook.printToConsole();
+		*/
 		
+<<<<<<< HEAD
 		// Creates an object "person2" from class Person
 		Person person2;
+=======
+		// Object person1 from class Person
+		
+		/*Person person2;
+>>>>>>> branch 'master' of https://github.com/dandaryll/team2.git
 		person2 = new Person();
 		person2.read();
 		addressBook.addContact(person2);
@@ -49,6 +70,9 @@ public class TestContactList {
 		addressBook.printToConsole();
 	}
 }
+*/
+		
+		
 /* ---OUTPUT---
 First name: Dan
 Last name: Alvarez

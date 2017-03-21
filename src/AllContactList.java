@@ -8,6 +8,7 @@
  */
 
 import java.util.ArrayList; // Interface for ArrayList
+import java.util.Arrays;
 import java.util.Scanner;
 import java.io.FileInputStream; // Interface used for saving to disk
 import java.io.FileOutputStream; // Interface used for saving to disk
@@ -20,12 +21,18 @@ import java.util.Collections; // Class for sorting ArrayList
 import java.util.List;
 
 public class AllContactList {
+<<<<<<< HEAD
 	private ArrayList<Person> allPersonArray = new ArrayList<Person>();
+=======
+>>>>>>> branch 'master' of https://github.com/dandaryll/team2.git
 	
+	private ArrayList<Person> allPersonArray = new ArrayList<Person>();
+	private Scanner userInput = new Scanner(System.in);
 	/**
 	 * This method adds a person object information to the ArrayList allPersonArray
 	 * By: JT
 	 */
+<<<<<<< HEAD
 	public void addContact(Person newPerson) {
 		if (newPerson.getLastname().equals("")) {
 			return;
@@ -33,16 +40,41 @@ public class AllContactList {
 		else {
 			allPersonArray.add(newPerson);
 		}
+=======
+	public void addContact() {
+>>>>>>> branch 'master' of https://github.com/dandaryll/team2.git
 		
-	}
-	
+		Person newPerson = new Person();
+		System.out.print("First name: ");
+		newPerson.setFirstname(userInput.nextLine());
+		System.out.print("Last name: ");
+		newPerson.setLastname(userInput.nextLine());
+		System.out.print("House: ");
+		newPerson.setHouse(userInput.nextLine());
+		System.out.print("City: ");
+		newPerson.setCity(userInput.nextLine());
+		System.out.print("State: ");
+		newPerson.setState(userInput.nextLine());
+		System.out.print("Zipcode: ");
+		newPerson.setZip(userInput.nextLine());
+		System.out.print("Email: ");
+		newPerson.setEmail(userInput.nextLine());
+		System.out.print("phone: ");
+		newPerson.setPhone(userInput.nextLine());
+		System.out.print("Note: ");
+		newPerson.setNotes(userInput.nextLine());
+		allPersonArray.add(newPerson);		
+		}
+		
 	/**
 	 * This method defines a toString method. Display all
 	 * 
 	 * By: MM
 	 */
-	public String toString() {
-		return "";
+	public String contactList() {
+		String list = Arrays.toString(allPersonArray.toArray()).replace("[", "").replace(",", "").replace("]", "");
+		return list;
+		
 	}
 	
 	/**
@@ -50,6 +82,8 @@ public class AllContactList {
 	 * 
 	 * By: JT
 	 */
+	
+	
 	public void printToConsole() {
 		int index = 0;
 		while (allPersonArray.size() > index) {
