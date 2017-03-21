@@ -58,7 +58,7 @@ public class AllContactList {
 	 * By: JT
 	 */
 	public String contactList() {
-		String list = Arrays.toString(allPersonArray.toArray()).replace("[", "").replace(",", "").replace("]", "");
+		String list = Arrays.toString(allPersonArray.toArray()).replace("[", "").replace("]", "");
 		return list;
 		
 	}
