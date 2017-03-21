@@ -21,13 +21,23 @@ public class TestContactList {
 
 	public static void main(String[] args) {
 		// Creates an object of "addressBook" from class AllContactList
-		AllContactList addressBook;
+		
+	/*	AllContactList addressBook;
 		addressBook = new AllContactList();
 		addressBook.addContact();
 		System.out.println('\n'+ addressBook.contactList());
 		addressBook.addContact();
 		System.out.println('\n'+ addressBook.contactList());
 	}
+	*/
+		
+			AllContactList addressBook;
+			addressBook = new AllContactList();
+			addressBook.addContact();
+			addressBook.printToConsole();
+			addressBook.addContact();
+			addressBook.printToConsole();
+		}
 	
 
 		

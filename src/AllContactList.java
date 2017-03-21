@@ -28,6 +28,11 @@ public class AllContactList {
 	 * This method adds a person object information to the ArrayList allPersonArray
 	 * By: JT
 	 */
+	
+	
+	
+	
+	
 	public void addContact(Person newPerson) {
 		if (newPerson.getLastname().equals("")) {
 			return;
