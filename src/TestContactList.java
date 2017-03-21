@@ -23,17 +23,28 @@ public class TestContactList {
 		// Object contactsEdit from class AllContactList
 		AllContactList addressBook;
 		addressBook = new AllContactList();
+		addressBook.addContact();
+		System.out.println('\n'+ addressBook.contactList());
+		addressBook.addContact();
+		System.out.println('\n'+ addressBook.contactList());
+	}
+}
+		
+		
+		
 		
 		// Object person1 from class Person
-		Person person1;
+		/* Person person1;
 		person1 = new Person();
 		person1.read();
 		addressBook.addContact(person1);
 		System.out.println();
 		addressBook.printToConsole();
+		*/
 		
 		// Object person1 from class Person
-		Person person2;
+		
+		/*Person person2;
 		person2 = new Person();
 		person2.read();
 		addressBook.addContact(person2);
@@ -41,6 +52,9 @@ public class TestContactList {
 		addressBook.printToConsole();
 	}
 }
+*/
+		
+		
 /* ---OUTPUT---
 Reached the end of main(), Program ran successfully.
 */
