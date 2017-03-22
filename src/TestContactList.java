@@ -38,9 +38,10 @@ public class TestContactList {
 			addressBook.printToConsole();
 			addressBook.addContact();
 			addressBook.printToConsole();
-			addressBook.searchByLastName();
+			//addressBook.searchByLastName();
 			System.out.print( "Please enter the last name of searched contact : ");
-			System.out.println(addressBook.searchByLastName());
+			//System.out.println(addressBook.searchByLastName());
+			addressBook.searchByLastName();
 			
 			
 			
