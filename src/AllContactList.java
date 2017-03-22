@@ -94,24 +94,34 @@ public class AllContactList {
 	 * 
 	 * By: MM
 	 */
-	public Person searchByLastName () {
-		
+	public Person searchByLastName() {
+		boolean found = false;
 		String givenLastName = userInput.nextLine();
-
+		while (found) {
 		for (int i = 0; i < allPersonArray.size(); i++) {
 
 			Person foundByLastName = allPersonArray.get(i);
-
+			
 				if (foundByLastName.getLastname().equals(givenLastName)) {
 					foundByLastName = allPersonArray.get(i++);
+<<<<<<< HEAD
 					
 					return foundByLastName;
 					
 					
 
+=======
+					//System.out.println(foundByLastName);
+					found = true;
+					return foundByLastName;
+					
+>>>>>>> branch 'master' of https://github.com/dandaryll/team2.git
 				}
-				
-		
+			}
+			if (!found) {
+				System.out.println("Last name not found.");
+			}
+			
 		}
 		return null;
 	}
