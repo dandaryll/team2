@@ -103,10 +103,11 @@ public class AllContactList {
 			Person foundByLastName = allPersonArray.get(i);
 
 				if (foundByLastName.getLastname().equals(givenLastName)) {
-
 					foundByLastName = allPersonArray.get(i++);
-
-					return foundByLastName ;
+					
+					return foundByLastName;
+					
+					
 
 				}
 				
