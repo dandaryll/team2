@@ -38,19 +38,18 @@ public class TestContactList {
 			addressBook.printToConsole();
 			addressBook.addContact();
 			addressBook.printToConsole();
-<<<<<<< HEAD
 			
-=======
+
 			//addressBook.searchByLastName();
->>>>>>> branch 'master' of https://github.com/dandaryll/team2.git
+
 			System.out.print( "Please enter the last name of searched contact : ");
-<<<<<<< HEAD
+
 			addressBook.searchByLastName();
 			System.out.println(addressBook.searchByLastName());
-=======
+
 			//System.out.println(addressBook.searchByLastName());
 			addressBook.searchByLastName();
->>>>>>> branch 'master' of https://github.com/dandaryll/team2.git
+
 			
 			
 			

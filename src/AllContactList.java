@@ -104,18 +104,12 @@ public class AllContactList {
 			
 				if (foundByLastName.getLastname().equals(givenLastName)) {
 					foundByLastName = allPersonArray.get(i++);
-<<<<<<< HEAD
 					
-					return foundByLastName;
-					
-					
-
-=======
 					//System.out.println(foundByLastName);
 					found = true;
 					return foundByLastName;
 					
->>>>>>> branch 'master' of https://github.com/dandaryll/team2.git
+
 				}
 			}
 			if (!found) {
