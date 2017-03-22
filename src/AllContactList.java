@@ -1,15 +1,12 @@
 
 /**
- * This class represents an object that represents how the contact list is printed as a whole. Also, 
- * one object of this class represents the search feature that find matches based on last name
- * and displaying them on the console. Another feature is save on exit where all contact list 
- * entries are stored in disk and reopens on the next run of the program.
- * 
+ * This class represents the whole list of contacts. Also it contains the methods for sorting the whole list of contacts,
+ * printing the whole list of contacts, to add new contact to the list of contacts, to search the contact by last name, 
+ * to save and open the list of contacts to disk.
  * By: DA
  */
 
 import java.util.ArrayList; // Interface for ArrayList
-import java.util.Arrays;
 import java.util.Scanner;
 import java.io.FileInputStream; // Interface used for saving to disk
 import java.io.FileOutputStream; // Interface used for saving to disk
@@ -19,7 +16,6 @@ import java.io.ObjectOutputStream; // Interface used for saving to disk
 import java.io.Serializable;// Interface used for saving to disk
 import java.util.Comparator;
 import java.util.Collections; // Class for sorting ArrayList
-import java.util.List;
 
 public class AllContactList {
 
@@ -64,26 +60,16 @@ public class AllContactList {
 	}
 
 	/**
-	 * This method defines a toString method. Display all
-	 * 
-	 * By: MM
-	 */
-	public String contactList() {
-		String list = Arrays.toString(allPersonArray.toArray()).replace("[", "").replace("]", "");
-		return list;
-
-	}
-
-	/**
 	 * This method returns and prints all entries of the contact list sorted
 	 * alphabetically.
 	 * 
-	 * By: JT
+	 * By: JT ----------------------------------------------------------------------------------------****** Back to fix you later
 	 */
 
 	public void printToConsole() {
 		int index = 0;
 		while (allPersonArray.size() > index) {
+			sortAllContacts();
 			System.out.println(allPersonArray.get(index) + "\n");
 			index++;
 		}
@@ -94,30 +80,18 @@ public class AllContactList {
 	 * 
 	 * By: MM
 	 */
-	public Person searchByLastName() {
+	public void searchByLastName() {
 		boolean found = false;
 		String givenLastName = userInput.nextLine();
-		while (found) {
 		for (int i = 0; i < allPersonArray.size(); i++) {
-
-			Person foundByLastName = allPersonArray.get(i);
-			
-				if (foundByLastName.getLastname().equals(givenLastName)) {
-					foundByLastName = allPersonArray.get(i++);
-					
-					//System.out.println(foundByLastName);
+				if (allPersonArray.get(i).getLastname().equals(givenLastName)) {
+					System.out.println(allPersonArray.get(i));
 					found = true;
-					return foundByLastName;
-					
-
 				}
 			}
 			if (!found) {
-				System.out.println("Last name not found.");
+				System.out.println("We are sorry, but we have no contact information unnder that last name");
 			}
-			
-		}
-		return null;
 	}
 
 	/**
@@ -141,6 +115,7 @@ public class AllContactList {
 	 * order. By: JT
 	 */
 	public void sortAllContacts() {
+		Collections.sort(allPersonArray);
 
 	}
 }

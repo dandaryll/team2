@@ -1,5 +1,5 @@
 /**
- * This class represents an object that stores the first name, last name, email, phone, and  notes for one person.
+ * This class represents an object that stores the first name, last name, address, email, phone, and  notes for one person.
  * 
  * By: DA
  */
@@ -14,7 +14,6 @@ import java.io.ObjectOutputStream; // Interface used for saving to disk
 import java.io.Serializable;// Interface used for saving to disk
 import java.util.Comparator;
 import java.util.Collections;
-import java.util.List;
 
 public class Person implements Serializable, Comparable<Person> {
 	private String firstName;
@@ -56,52 +55,30 @@ public class Person implements Serializable, Comparable<Person> {
 	public boolean read() {
 		Scanner userInput;
 		userInput = new Scanner(System.in);
-		
-		// Setters
+		Person newPerson = new Person();
 		System.out.print("First name: ");
-		String newFirstname = userInput.nextLine();
+		newPerson.setFirstname(userInput.nextLine());
 		System.out.print("Last name: ");
-		newLastname = userInput.nextLine();
-		if (newLastname.equals("")) {
+		newPerson.setLastname(userInput.nextLine());
+		if (newPerson.getLastname().equals("")) {
 			System.out.println("Contact information not added. Last name required.");
 			return false;
 		}
-		setFirstname(newFirstname);
-		setLastname(newLastname);
-		readAddress();
-		System.out.print("E-mail: ");
-		String newEmail = userInput.nextLine();
-		setEmail(newEmail);
-		System.out.print("Phone: ");
-		String newPhone = userInput.nextLine();
-		setPhone(newPhone);
-		System.out.print("Notes: ");
-		String newNotes = userInput.nextLine();
-		setNotes(newNotes);
-		return true;
-	}
-	
-	/**
-	 * This methods reads userInput for address section which are the house, city, state, and zip.
-	 * 
-	 * By: DA
-	 */
-	public void readAddress() {
-		Scanner userInput;
-		userInput = new Scanner(System.in);
 		System.out.print("House: ");
-		String newHouse = userInput.nextLine();
-		setHouse(newHouse);
+		newPerson.setHouse(userInput.nextLine());
 		System.out.print("City: ");
-		String newCity = userInput.nextLine();
-		setCity(newCity);
+		newPerson.setCity(userInput.nextLine());
 		System.out.print("State: ");
-		String newState = userInput.nextLine();
-		setState(newState);
-		System.out.print("Zip: ");
-		String newZip = userInput.nextLine();
-		setZip(newZip);
-		
+		newPerson.setState(userInput.nextLine());
+		System.out.print("Zipcode: ");
+		newPerson.setZip(userInput.nextLine());
+		System.out.print("Email: ");
+		newPerson.setEmail(userInput.nextLine());
+		System.out.print("phone: ");
+		newPerson.setPhone(userInput.nextLine());
+		System.out.print("Notes: ");
+		newPerson.setNotes(userInput.nextLine());
+		return true;
 	}
 	
 	/**
@@ -272,7 +249,12 @@ public class Person implements Serializable, Comparable<Person> {
 	 */
 	@Override
 	public int compareTo(Person otherPerson) {
-		return 0;
+		if (this.lastName.equalsIgnoreCase(otherPerson.lastName)){
+			return this.firstName.compareTo(otherPerson.firstName);
+			
+		}
+		
+		return this.lastName.compareTo(otherPerson.lastName);
 	}
 
 }
