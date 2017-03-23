@@ -62,7 +62,7 @@ public class AllContactList {
 		boolean found = false;
 		String givenLastName = userInput.nextLine();
 		for (int i = 0; i < allPersonArray.size(); i++) {
-				if (allPersonArray.get(i).getLastname().equals(givenLastName)) {
+				if (allPersonArray.get(i).getLastname().equalsIgnoreCase(givenLastName)) {
 					System.out.println("\n" + allPersonArray.get(i));
 					found = true;
 				}

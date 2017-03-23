@@ -47,7 +47,7 @@ public class Person implements Serializable, Comparable<Person> {
 		
 	}
 	*/
-	
+
 	/**
 	 * This method reads userInput and prompts user to assign values to firstName, lastName,
 	 * email, phone and notes
@@ -141,8 +141,8 @@ public class Person implements Serializable, Comparable<Person> {
 	 * Sets the value for email to "newEmail".
 	 * By: MM
 	 */
-	public boolean setEmail(String newEmail) {
-		return true;
+	public void setEmail(String newEmail) {
+		email = newEmail;
 	}
 
 	/**
