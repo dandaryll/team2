@@ -241,7 +241,7 @@ public class Person implements Serializable, Comparable<Person> {
 					   "" + " " + "" + "\n" + "E-mail: " + "" + "\n" + "Phone: " + "" + "\n" + "Notes: " + "";
 		}
 		else {
-		return "Name: " + "" + " " + lastName + "\n" + "Address: " + house + " " + city + ", " +
+		return "Name: " + firstName + " " + lastName + "\n" + "Address: " + house + " " + city + ", " +
 			   state + " " + zip + "\n" + "E-mail: " + email + "\n" + "Phone: " + phone + "\n" + "Notes: " + notes;
 		}
 	}
