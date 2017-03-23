@@ -32,6 +32,7 @@ public class Person implements Serializable, Comparable<Person> {
 	 * 
 	 * By: DA
 	 */
+	/*
 	public Person() {
 		firstName   = "";
 		lastName    = "";
@@ -45,6 +46,7 @@ public class Person implements Serializable, Comparable<Person> {
 		newLastname = "";
 		
 	}
+	*/
 	
 	/**
 	 * This method reads userInput and prompts user to assign values to firstName, lastName,
@@ -148,7 +150,7 @@ public class Person implements Serializable, Comparable<Person> {
 	 * By: MM
 	 */
 	public void setPhone(String newPhone) {
-
+		phone = newPhone;
 	}
 
 	/**
@@ -236,14 +238,16 @@ public class Person implements Serializable, Comparable<Person> {
 	 * By: JT
 	 */
 	public String toString() { 
-		if (lastName == null) {
+		/*if (lastName == null) {
 			return "Name: " + "" + " " + "" + "\n" + "Address: " + "" + " " + "" + "" +
 					   "" + " " + "" + "\n" + "E-mail: " + "" + "\n" + "Phone: " + "" + "\n" + "Notes: " + "";
 		}
-		else {
+		else if (!city.contains(",")) {
 		return "Name: " + firstName + " " + lastName + "\n" + "Address: " + house + " " + city + ", " +
 			   state + " " + zip + "\n" + "E-mail: " + email + "\n" + "Phone: " + phone + "\n" + "Notes: " + notes;
-		}
+		}*/
+		return "Name: " + firstName + " " + lastName + "\n" + "Address: " + house + " " + city + " " +
+		   state + " " + zip + "\n" + "E-mail: " + email + "\n" + "Phone: " + phone + "\n" + "Notes: " + notes;
 	}
 	
 	/**
