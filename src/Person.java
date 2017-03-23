@@ -26,26 +26,7 @@ public class Person implements Serializable, Comparable<Person> {
 	private String email;
 	private String phone;
 	private String notes;
-	
-	/**
-	 * Default constructor to initialize private data members
-	 * 
-	 * By: DA
-	 */
-	public Person() {
-		firstName   = "";
-		lastName    = "";
-		house       = "";
-		city        = "";
-		state       = "";
-		zip         = "";
-		email       = "";
-		phone       = "";
-		notes       = "";
-		newLastname = "";
-		
-	}
-	
+
 	/**
 	 * This method reads userInput and prompts user to assign values to firstName, lastName,
 	 * email, phone and notes
@@ -139,8 +120,8 @@ public class Person implements Serializable, Comparable<Person> {
 	 * Sets the value for email to "newEmail".
 	 * By: MM
 	 */
-	public boolean setEmail(String newEmail) {
-		return true;
+	public void setEmail(String newEmail) {
+		email = newEmail;
 	}
 
 	/**
@@ -148,7 +129,7 @@ public class Person implements Serializable, Comparable<Person> {
 	 * By: MM
 	 */
 	public void setPhone(String newPhone) {
-
+		phone = newPhone;
 	}
 
 	/**
