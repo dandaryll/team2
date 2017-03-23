@@ -236,8 +236,14 @@ public class Person implements Serializable, Comparable<Person> {
 	 * By: JT
 	 */
 	public String toString() { 
-		return "Name: " + firstName + " " + lastName + "\n" + "Address: " + house + " " + city + ", " +
+		if (lastName == null) {
+			return "Name: " + "" + " " + "" + "\n" + "Address: " + "" + " " + "" + "" +
+					   "" + " " + "" + "\n" + "E-mail: " + "" + "\n" + "Phone: " + "" + "\n" + "Notes: " + "";
+		}
+		else {
+		return "Name: " + "" + " " + lastName + "\n" + "Address: " + house + " " + city + ", " +
 			   state + " " + zip + "\n" + "E-mail: " + email + "\n" + "Phone: " + phone + "\n" + "Notes: " + notes;
+		}
 	}
 	
 	/**
