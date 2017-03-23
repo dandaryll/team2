@@ -1,4 +1,3 @@
-
 /**
  * This class represents the whole list of contacts. Also it contains the methods for sorting the whole list of contacts,
  * printing the whole list of contacts, to add new contact to the list of contacts, to search the contact by last name, 
@@ -24,39 +23,18 @@ public class AllContactList {
 
 	/**
 	 * This method adds a person object information to the ArrayList
-	 * allPersonArray By: JT
+	 * allPersonArray
+	 * 
+	 * By: JT
 	 */
 
 	public void addContact(Person newPerson) {
 		if (newPerson.getLastname().equals("")) {
-			return;
-		} else {
+			
+		}
+		else {
 			allPersonArray.add(newPerson);
 		}
-	}
-
-	public void addContact() {
-
-		Person newPerson = new Person();
-		System.out.print("First name: ");
-		newPerson.setFirstname(userInput.nextLine());
-		System.out.print("Last name: ");
-		newPerson.setLastname(userInput.nextLine());
-		System.out.print("House: ");
-		newPerson.setHouse(userInput.nextLine());
-		System.out.print("City: ");
-		newPerson.setCity(userInput.nextLine());
-		System.out.print("State: ");
-		newPerson.setState(userInput.nextLine());
-		System.out.print("Zipcode: ");
-		newPerson.setZip(userInput.nextLine());
-		System.out.print("Email: ");
-		newPerson.setEmail(userInput.nextLine());
-		System.out.print("phone: ");
-		newPerson.setPhone(userInput.nextLine());
-		System.out.print("Note: ");
-		newPerson.setNotes(userInput.nextLine());
-		allPersonArray.add(newPerson);
 	}
 
 	/**
@@ -85,12 +63,12 @@ public class AllContactList {
 		String givenLastName = userInput.nextLine();
 		for (int i = 0; i < allPersonArray.size(); i++) {
 				if (allPersonArray.get(i).getLastname().equals(givenLastName)) {
-					System.out.println(allPersonArray.get(i));
+					System.out.println("\n" + allPersonArray.get(i));
 					found = true;
 				}
 			}
 			if (!found) {
-				System.out.println("We are sorry, but we have no contact information unnder that last name");
+				System.out.println("We are sorry, but we have no contact information under that last name");
 			}
 	}
 
@@ -104,7 +82,9 @@ public class AllContactList {
 	}
 
 	/**
-	 * This method reads the saved file when the program starts By: DA
+	 * This method reads the saved file when the program starts
+	 * 
+	 * By: DA
 	 */
 	public void open() {
 
@@ -112,7 +92,9 @@ public class AllContactList {
 
 	/**
 	 * This method sorts the array list last name elements in alphabetical
-	 * order. By: JT
+	 * order.
+	 * 
+	 * By: JT
 	 */
 	public void sortAllContacts() {
 		Collections.sort(allPersonArray);

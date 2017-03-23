@@ -20,73 +20,29 @@ import java.util.List;
 public class TestContactList {
 
 	public static void main(String[] args) {
-		// Creates an object of "addressBook" from class AllContactList
-		
-	/*	AllContactList addressBook;
-		addressBook = new AllContactList();
-		addressBook.addContact();
-		System.out.println('\n'+ addressBook.contactList());
-		addressBook.addContact();
-		System.out.println('\n'+ addressBook.contactList());
-	}
-	*/
-		    Scanner input = new Scanner(System.in);
+		    Scanner input;
+		    input = new Scanner(System.in);
 		    
 			AllContactList addressBook;
 			addressBook = new AllContactList();
-			addressBook.addContact();
-			addressBook.addContact();
-			addressBook.addContact();
-			addressBook.addContact();
-			addressBook.addContact();
+			Person person1;
+			person1 = new Person();
+			person1.read();
+			addressBook.addContact(person1);
+			
+			Person person2;
+			person2 = new Person();
+			person2.read();
+			addressBook.addContact(person2);
+			
+			System.out.println();
+			
 			addressBook.printToConsole();
-			System.out.print( "Please enter the last name of searched contact : ");
+			System.out.print( "Please enter the last name of the person you wish to find: ");
 			addressBook.searchByLastName();	
 		}
-	
-
-		
-		
-		
-		
-
-		// Creates an object of "person1" from class Person
-		//Person person1;
-
-		// Object person1 from class Person
-		/* Person person1;
-
-		person1 = new Person();
-		person1.read();
-		addressBook.addContact(person1);
-		System.out.println();
-		addressBook.printToConsole();
-		*/
-		
-
-		// Creates an object "person2" from class Person
-		//Person person2;
-
-		// Object person1 from class Person
-		
-		/*Person person2;
-		person2 = new Person();
-		person2.read();
-		addressBook.addContact(person2);
-		System.out.println();
-		addressBook.printToConsole();
-		
-		// Creates an object "person3" from class Person
-		Person person3;
-		person3 = new Person();
-		person3.read();
-		addressBook.addContact(person3);
-		System.out.println();
-		addressBook.printToConsole();
-	} */
 }
-		
-		
+	
 /* ---OUTPUT---
 First name: Dan
 Last name: Alvarez

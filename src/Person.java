@@ -55,29 +55,28 @@ public class Person implements Serializable, Comparable<Person> {
 	public boolean read() {
 		Scanner userInput;
 		userInput = new Scanner(System.in);
-		Person newPerson = new Person();
 		System.out.print("First name: ");
-		newPerson.setFirstname(userInput.nextLine());
+		setFirstname(userInput.nextLine());
 		System.out.print("Last name: ");
-		newPerson.setLastname(userInput.nextLine());
-		if (newPerson.getLastname().equals("")) {
+		setLastname(userInput.nextLine());
+		if (getLastname().equals("")) {
 			System.out.println("Contact information not added. Last name required.");
 			return false;
 		}
 		System.out.print("House: ");
-		newPerson.setHouse(userInput.nextLine());
+		setHouse(userInput.nextLine());
 		System.out.print("City: ");
-		newPerson.setCity(userInput.nextLine());
+		setCity(userInput.nextLine());
 		System.out.print("State: ");
-		newPerson.setState(userInput.nextLine());
+		setState(userInput.nextLine());
 		System.out.print("Zipcode: ");
-		newPerson.setZip(userInput.nextLine());
+		setZip(userInput.nextLine());
 		System.out.print("Email: ");
-		newPerson.setEmail(userInput.nextLine());
+		setEmail(userInput.nextLine());
 		System.out.print("phone: ");
-		newPerson.setPhone(userInput.nextLine());
+		setPhone(userInput.nextLine());
 		System.out.print("Notes: ");
-		newPerson.setNotes(userInput.nextLine());
+		setNotes(userInput.nextLine());
 		return true;
 	}
 	
@@ -94,13 +93,11 @@ public class Person implements Serializable, Comparable<Person> {
 	 * Sets the value for lastname to "newLastname".
 	 * By: MM
 	 */
-	public boolean setLastname(String newLastname) {
+	public void setLastname(String newLastname) {
 		if (newLastname.equals("")) {
-			System.out.println("Contact information not added. Last name required.");
-			return false;
+			
 		}
 		lastName = newLastname;
-		return true;
 		
 	}
 	
@@ -251,9 +248,7 @@ public class Person implements Serializable, Comparable<Person> {
 	public int compareTo(Person otherPerson) {
 		if (this.lastName.equalsIgnoreCase(otherPerson.lastName)){
 			return this.firstName.compareTo(otherPerson.firstName);
-			
 		}
-		
 		return this.lastName.compareTo(otherPerson.lastName);
 	}
 
