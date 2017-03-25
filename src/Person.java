@@ -238,15 +238,12 @@ public class Person implements Serializable, Comparable<Person> {
 	 * By: JT
 	 */
 	public String toString() { 
-		/*if (lastName == null) {
-			return "Name: " + "" + " " + "" + "\n" + "Address: " + "" + " " + "" + "" +
-					   "" + " " + "" + "\n" + "E-mail: " + "" + "\n" + "Phone: " + "" + "\n" + "Notes: " + "";
+		
+		if (city.contains("")) {
+			return "Name: " + firstName + " " + lastName + "\n" + "Address: " + house + " " + city + " " +
+					state + " " + zip + "\n" + "E-mail: " + email + "\n" + "Phone: " + phone + "\n" + "Notes: " + notes;
 		}
-		else if (!city.contains(",")) {
 		return "Name: " + firstName + " " + lastName + "\n" + "Address: " + house + " " + city + ", " +
-			   state + " " + zip + "\n" + "E-mail: " + email + "\n" + "Phone: " + phone + "\n" + "Notes: " + notes;
-		}*/
-		return "Name: " + firstName + " " + lastName + "\n" + "Address: " + house + " " + city + " " +
 		   state + " " + zip + "\n" + "E-mail: " + email + "\n" + "Phone: " + phone + "\n" + "Notes: " + notes;
 	}
 	
