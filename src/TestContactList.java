@@ -25,6 +25,9 @@ public class TestContactList {
 		    
 			AllContactList addressBook;
 			addressBook = new AllContactList();
+			// Opens file if any
+			addressBook.open();
+			
 			Person person1;
 			person1 = new Person();
 			person1.read();
@@ -39,7 +42,9 @@ public class TestContactList {
 			
 			addressBook.printToConsole();
 			System.out.print( "Please enter the last name of the person you wish to find: ");
-			addressBook.searchByLastName();	
+			addressBook.searchByLastName();
+			// Last method to run in main so it will save at exit
+			addressBook.save();
 		}
 }
 	

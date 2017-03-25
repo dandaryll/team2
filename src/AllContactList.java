@@ -8,6 +8,7 @@
 import java.util.ArrayList; // Interface for ArrayList
 import java.util.Scanner;
 import java.io.FileInputStream; // Interface used for saving to disk
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream; // Interface used for saving to disk
 import java.io.IOException; // Interface used for saving to disk
 import java.io.ObjectInputStream; // Interface used for saving to disk
@@ -78,6 +79,21 @@ public class AllContactList {
 	 * By: DA
 	 */
 	public void save() {
+		System.out.println("Writing file!");
+		
+		FileOutputStream outFile;
+		ObjectOutputStream outObject;
+		try {
+			outFile = new FileOutputStream("Contactlist 2.0.sav");
+			outObject = new ObjectOutputStream(outFile);
+			
+			outObject.writeObject(allPersonArray);
+			
+			outFile.close();
+			outObject.close();
+		} catch (IOException ioe) {
+			System.out.println("Error writing objects to the file: " + ioe.getMessage());
+		}
 
 	}
 
@@ -87,7 +103,33 @@ public class AllContactList {
 	 * By: DA
 	 */
 	public void open() {
+		System.out.println("Initializing...Please wait.");
+		FileInputStream inFile;
+		ObjectInputStream inObject;
 
+		try {
+			inFile = new FileInputStream("Contactlist 2.0.sav");
+			inObject = new ObjectInputStream(inFile);
+			
+			allPersonArray = (ArrayList<Person>)inObject.readObject();
+			
+			inObject.close();
+			inFile.close();
+		}
+		catch (FileNotFoundException fnf) {
+			return;
+		}
+		catch (IOException ioe) {
+			ioe.printStackTrace();
+			return;
+		}
+		catch (ClassNotFoundException c) {
+			System.out.println("Class not found");
+			c.printStackTrace();
+			return;
+		}
+		System.out.println("Current Contact List entries: " + allPersonArray.size());
+		
 	}
 
 	/**
