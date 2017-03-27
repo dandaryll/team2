@@ -38,6 +38,12 @@ public class TestContactList {
 			person2.read();
 			addressBook.addContact(person2);
 			
+			// new 3.27.2017 12:26pm
+			Person person3;
+			person3 = new Person();
+			person3.read();
+			addressBook.addContact(person3);
+			
 			System.out.println();
 			
 			addressBook.printToConsole();
