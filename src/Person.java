@@ -18,7 +18,7 @@ import java.util.Collections;
 public class Person implements Serializable, Comparable<Person> {
 	private String firstName;
 	private String lastName;
-	private String newLastname;
+	private String newLastName;
 	private String house;
 	private String city;
 	private String state;
@@ -28,40 +28,19 @@ public class Person implements Serializable, Comparable<Person> {
 	private String notes;
 	
 	/**
-	 * Default constructor to initialize private data members
-	 * 
-	 * By: DA
-	 */
-	/*
-	public Person() {
-		firstName   = "";
-		lastName    = "";
-		house       = "";
-		city        = "";
-		state       = "";
-		zip         = "";
-		email       = "";
-		phone       = "";
-		notes       = "";
-		newLastname = "";
-		
-	}
-	*/
-
-	/**
-	 * This method reads userInput and prompts user to assign values to firstName, lastName,
+	 * This method reads userInput and prompts user to assign values to firstName, lastName, house, city, state, zip,
 	 * email, phone and notes
 	 * 
 	 * By: DA
 	 */
-	public boolean read() {
+	public boolean read() { 							//********26 lines**********
 		Scanner userInput;
 		userInput = new Scanner(System.in);
 		System.out.print("First name: ");
 		setFirstname(userInput.nextLine());
 		System.out.print("Last name: ");
 		setLastname(userInput.nextLine());
-		if (getLastname().equals("")) {
+		if (getLastName().equals("")) {
 			System.out.println("Contact information not added. Last name required.");
 			return false;
 		}
@@ -79,28 +58,26 @@ public class Person implements Serializable, Comparable<Person> {
 		setPhone(userInput.nextLine());
 		System.out.print("Notes: ");
 		setNotes(userInput.nextLine());
+		System.out.println("Contact information has been added successfully!");
 		return true;
 	}
 	
 	/**
-	 * Sets the value for firstname to "newFirstname".
+	 * Sets the value for firstName to "newFirstName".
 	 * By: DA
 	 */
-	public void setFirstname(String newFirstname) {
-		firstName = newFirstname;
-		
+	public void setFirstname(String newFirstName) {
+		firstName = newFirstName;
 	}
 
 	/**
-	 * Sets the value for lastname to "newLastname".
+	 * Sets the value for lastName to "newLastName".
 	 * By: MM
 	 */
-	public void setLastname(String newLastname) {
-		if (newLastname.equals("")) {
-			
+	public void setLastname(String newLastName) {
+		if (newLastName.equals("")) {
 		}
-		lastName = newLastname;
-		
+		lastName = newLastName;
 	}
 	
 	/**
@@ -109,23 +86,21 @@ public class Person implements Serializable, Comparable<Person> {
 	 */
 	public void setHouse(String newHouse) {
 		house = newHouse;
-		
 	}
 
 	/**
 	 * Sets the value for city to "newCity".
 	 * By: DA
 	 */
-	public void setCity(String newCity) { // newCity is a parameter
+	public void setCity(String newCity) {
 		city = newCity;
-		
 	}
 
 	/**
 	 * Sets the value for state to "newState".
 	 * By: DA
 	 */
-	public void setState(String newState) { // newState is a parameter
+	public void setState(String newState) { 
 		state = newState;
 	}
 
@@ -133,7 +108,7 @@ public class Person implements Serializable, Comparable<Person> {
 	 * Sets the value for zip to "newZip".
 	 * By: MM
 	 */
-	public void setZip(String newZip) { // newZip is a parameter
+	public void setZip(String newZip) {
 		zip = newZip;
 	}
 
@@ -162,18 +137,18 @@ public class Person implements Serializable, Comparable<Person> {
 	}
 
 	/**
-	 * Returns the value of firstname.
+	 * Returns the value of firstName.
 	 * By: MM
 	 */
-	public String getFirstname() {
+	public String getFirstName() {
 		return firstName;
 	}
 
 	/**
-	 * Returns the value of lastname.
+	 * Returns the value of lastName.
 	 * By: MM
 	 */
-	public String getLastname() {
+	public String getLastName() {
 		return lastName;
 	}
 	
@@ -234,7 +209,7 @@ public class Person implements Serializable, Comparable<Person> {
 	}
 	
 	/**
-	 * This method returns a toString.
+	 * This method returns a string that represents one object in person class.
 	 * By: JT
 	 */
 	public String toString() { 
@@ -248,17 +223,18 @@ public class Person implements Serializable, Comparable<Person> {
 	}
 	
 	/**
-	 * This method is used to complete Collections.sort method for alphabetizing lastnames and firstnames.
+	 * This method sorts the contacts in the array list alphabetically by last name based on the returned value 
+	 * When the return value equals 0, it's sorted case insensitively by first name 
+	 * When the return value is not equal to 0, it's sorted case insensitively by last name  
 	 * By: JT
 	 */
 	@Override
 	public int compareTo(Person otherPerson) {
-		if (this.lastName.equalsIgnoreCase(otherPerson.lastName)){
+		if (this.lastName.equalsIgnoreCase(otherPerson.lastName)){  
 			return this.firstName.compareToIgnoreCase(otherPerson.firstName);
 		}
 		return this.lastName.compareToIgnoreCase(otherPerson.lastName);
 	}
-
 }
 /* ---OUTPUT---
 First name: Dan

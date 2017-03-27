@@ -5,24 +5,10 @@
  * By: DA
  */
 
-import java.util.ArrayList; // Interface for ArrayList
-import java.util.Scanner;
-import java.io.FileInputStream; // Interface used for saving to disk
-import java.io.FileOutputStream; // Interface used for saving to disk
-import java.io.IOException; // Interface used for saving to disk
-import java.io.ObjectInputStream; // Interface used for saving to disk
-import java.io.ObjectOutputStream; // Interface used for saving to disk
-import java.io.Serializable;// Interface used for saving to disk
-import java.util.Comparator;
-import java.util.Collections;
-import java.util.List;
-
 public class TestContactList {
 
 	public static void main(String[] args) {
-		    Scanner input;
-		    input = new Scanner(System.in);
-		    
+		  
 			AllContactList addressBook;
 			addressBook = new AllContactList();
 			// Opens file if any
