@@ -1,5 +1,5 @@
 /**
- * This class represents an object that stores the first name, last name, address, email, phone, and  notes for one person.
+4 * This class represents an object that stores the first name, last name, address, email, phone, and  notes for one person.
  * 
  * By: DA
  */
