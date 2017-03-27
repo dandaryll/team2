@@ -254,9 +254,9 @@ public class Person implements Serializable, Comparable<Person> {
 	@Override
 	public int compareTo(Person otherPerson) {
 		if (this.lastName.equalsIgnoreCase(otherPerson.lastName)){
-			return this.firstName.compareTo(otherPerson.firstName);
+			return this.firstName.compareToIgnoreCase(otherPerson.firstName);
 		}
-		return this.lastName.compareTo(otherPerson.lastName);
+		return this.lastName.compareToIgnoreCase(otherPerson.lastName);
 	}
 
 }
