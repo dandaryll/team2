@@ -23,15 +23,14 @@ public class AllContactList {
 	private Scanner userInput = new Scanner(System.in);
 
 	/**
-	 * This method adds a person object information to the ArrayList
+	 * This method adds a person object's information to the ArrayList 
 	 * allPersonArray
 	 * 
 	 * By: JT
 	 */
 
 	public void addContact(Person newPerson) {
-		if (newPerson.getLastname().equals("")) {
-			
+		if (newPerson.getLastName().equals("")) {	
 		}
 		else {
 			allPersonArray.add(newPerson);
@@ -42,7 +41,7 @@ public class AllContactList {
 	 * This method returns and prints all entries of the contact list sorted
 	 * alphabetically.
 	 * 
-	 * By: JT ----------------------------------------------------------------------------------------****** Back to fix you later
+	 * By: JT 
 	 */
 
 	public void printToConsole() {
@@ -63,11 +62,11 @@ public class AllContactList {
 		boolean found = false;
 		String givenLastName = userInput.nextLine();
 		for (int i = 0; i < allPersonArray.size(); i++) {
-				if (allPersonArray.get(i).getLastname().equalsIgnoreCase(givenLastName)) {
+				if (allPersonArray.get(i).getLastName().equalsIgnoreCase(givenLastName)) {
 					System.out.println("\n" + allPersonArray.get(i));
 					found = true;
 				}
-			}
+		}
 			if (!found) {
 				System.out.println("We are sorry, but we have no contact information under that last name");
 			}
@@ -79,7 +78,6 @@ public class AllContactList {
 	 * By: DA
 	 */
 	public void save() {
-		System.out.println("Writing file!");
 		
 		FileOutputStream outFile;
 		ObjectOutputStream outObject;
@@ -94,7 +92,6 @@ public class AllContactList {
 		} catch (IOException ioe) {
 			System.out.println("Error writing objects to the file: " + ioe.getMessage());
 		}
-
 	}
 
 	/**
@@ -103,7 +100,7 @@ public class AllContactList {
 	 * By: DA
 	 */
 	public void open() {
-		System.out.println("Initializing...Please wait.");
+		
 		FileInputStream inFile;
 		ObjectInputStream inObject;
 
@@ -128,8 +125,7 @@ public class AllContactList {
 			c.printStackTrace();
 			return;
 		}
-		System.out.println("Current Contact List entries: " + allPersonArray.size());
-		
+		System.out.println("Current Contact List entries: " + allPersonArray.size());	
 	}
 
 	/**
@@ -140,7 +136,6 @@ public class AllContactList {
 	 */
 	public void sortAllContacts() {
 		Collections.sort(allPersonArray);
-
 	}
 }
 /*
