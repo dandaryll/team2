@@ -204,11 +204,7 @@ public class Person implements Serializable, Comparable<Person> {
 	 */
 	public String toString() { 
 		
-		if (city.contains("")) {
-			return "Name: " + firstName + " " + lastName + "\n" + "Address: " + house + " " + city + " " +
-					state + " " + zip + "\n" + "E-mail: " + email + "\n" + "Phone: " + phone + "\n" + "Notes: " + notes;
-		}
-		return "Name: " + firstName + " " + lastName + "\n" + "Address: " + house + " " + city + ", " +
+		return "Name: " + firstName + " " + lastName + "\n" + "Address: " + house + " " + city + " " +
 		   state + " " + zip + "\n" + "E-mail: " + email + "\n" + "Phone: " + phone + "\n" + "Notes: " + notes;
 	}
 	
