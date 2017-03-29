@@ -25,10 +25,7 @@ public class TestContactList {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the ContactLister2.0!");
-		
 		showMenu();
-
-		System.out.println("Reached the end of main(), Program ran successfully.");
 		System.out.println("Thank you for using the ContactLister2.0!");
 	}
 	
@@ -62,7 +59,6 @@ public class TestContactList {
 				done = true;
 				break;
 			default:
-				System.out.println("Please select from [1]-[4]");
 				break;
 			}
 		}
