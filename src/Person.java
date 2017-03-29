@@ -3,22 +3,12 @@
  * 
  * By: DA
  */
-
-import java.util.ArrayList; // Interface for ArrayList
 import java.util.Scanner;
-import java.io.FileInputStream; // Interface used for saving to disk
-import java.io.FileOutputStream; // Interface used for saving to disk
-import java.io.IOException; // Interface used for saving to disk
-import java.io.ObjectInputStream; // Interface used for saving to disk
-import java.io.ObjectOutputStream; // Interface used for saving to disk
-import java.io.Serializable;// Interface used for saving to disk
-import java.util.Comparator;
-import java.util.Collections;
+import java.io.Serializable;
 
 public class Person implements Serializable, Comparable<Person> {
 	private String firstName;
 	private String lastName;
-	private String newLastName;
 	private String house;
 	private String city;
 	private String state;
@@ -33,7 +23,7 @@ public class Person implements Serializable, Comparable<Person> {
 	 * 
 	 * By: DA
 	 */
-	public boolean read() { 							//********26 lines**********
+	public boolean read() { 							
 		Scanner userInput;
 		userInput = new Scanner(System.in);
 		System.out.print("First name: ");
@@ -236,71 +226,3 @@ public class Person implements Serializable, Comparable<Person> {
 		return this.lastName.compareToIgnoreCase(otherPerson.lastName);
 	}
 }
-/* ---OUTPUT---
-First name: Dan
-Last name: Alvarez
-House: 12345 El Monte Rd.
-City: Los Altos Hills
-State: CA
-Zip: 94022
-E-mail: dan@yahoo.com
-Phone: 408-728-8905
-Notes: none
-
-Name: Dan Alvarez
-Address: 12345 El Monte Rd. Los Altos Hills, CA 94022
-E-mail: dan@yahoo.com
-Phone: 408-728-8905
-Notes: none
-
-First name: Matt
-Last name: Maksim
-House: 12345 El Monte Rd. 
-City: Los Altos Hills
-State: CA
-Zip: 94022
-E-mail: matt@yahoo.com
-Phone: 408-393-2665
-Notes: none
-
-Name: Dan Alvarez
-Address: 12345 El Monte Rd. Los Altos Hills, CA 94022
-E-mail: dan@yahoo.com
-Phone: 408-728-8905
-Notes: none
-
-Name: Matt Maksim
-Address: 12345 El Monte Rd.  Los Altos Hills, CA 94022
-E-mail: matt@yahoo.com
-Phone: 408-393-2665
-Notes: none
-
-First name: Nat
-Last name: Tiyasan
-House: 12345 El Monte Rd.
-City: Los Altos
-State: CA
-Zip: 94022
-E-mail: nat@yahoo.com
-Phone: 408-777-1234
-Notes: none
-
-Name: Dan Alvarez
-Address: 12345 El Monte Rd. Los Altos Hills, CA 94022
-E-mail: dan@yahoo.com
-Phone: 408-728-8905
-Notes: none
-
-Name: Matt Maksim
-Address: 12345 El Monte Rd.  Los Altos Hills, CA 94022
-E-mail: matt@yahoo.com
-Phone: 408-393-2665
-Notes: none
-
-Name: Nat Tiyasan
-Address: 12345 El Monte Rd. Los Altos, CA 94022
-E-mail: nat@yahoo.com
-Phone: 408-777-1234
-Notes: none
-
-*/
