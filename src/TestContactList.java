@@ -27,8 +27,8 @@ public class TestContactList {
 		boolean done = false;
 		addressbook.open();
 		while (!done) {
-			System.out.print("[1] add contact\n" + "[2] print the contact list\n" + "[3] retrieve contact information.\n"
-							 + "[4] quit the program\n" + "Please select an option from the above menu: ");
+			System.out.print("[1] add contact.\n" + "[2] print the contact list.\n" + "[3] retrieve contact information.\n"
+							 + "[4] quit the program.\n" + "Please select an option from the above menu: ");
 			
 			menuChoice = userInput.nextLine();
 			switch (menuChoice) {

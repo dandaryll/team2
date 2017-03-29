@@ -66,7 +66,7 @@ public class AllContactList {
 				}
 		}
 			if (!found) {
-				System.out.println("We are sorry, but we have no contact information under that last name");
+				System.out.println("We are sorry, but we have no contact information under that last name.");
 			}
 	}
 
